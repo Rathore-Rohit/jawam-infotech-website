@@ -149,8 +149,8 @@ const Footer = () => {
           color: theme.palette.custom.white,
           pt: 6,
           pb: 6,
-          pl: { xs: 4, sm: 6, md: 6, lg: 14 },
-          pr: { xs: 4, sm: 38, md: 6, lg: 14 },
+          pl: { xs: 3, sm: 6, md: 6, lg: 14 },
+          pr: { xs: 5, sm: 38, md: 6, lg: 14 },
         }}
       >
         <Grid container rowSpacing={11} columnSpacing={8}>

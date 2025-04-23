@@ -22,7 +22,6 @@ const Underline = ({ lineWidth, lineHeight, barWidth, mtop, mBottom }) => {
           width: barWidth,
           height: "100%",
           backgroundColor: "#fff",
-          borderRadius: "10px",
           animation: "moveBar 2.5s linear infinite alternate",
           "@keyframes moveBar": {
             "0%": { left: "0%" },
