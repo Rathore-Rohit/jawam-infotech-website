@@ -1,0 +1,10 @@
+/* Carousel Dots (Our Technology Section(Home Page)) */
+.swiper-pagination-bullet {
+    transition: all 0.3s ease;
+    border-radius: 2px; 
+  }
+  
+  .swiper-pagination-bullet-active {
+    transform: scale(1.3);
+    background-color: #06A3DA;
+  }
