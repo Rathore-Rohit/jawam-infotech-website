@@ -67,6 +67,7 @@ const navItems = [
     ],
   },
   { label: "Contact Us", path: "/contact" },
+  { label: "Career", path: "/contact" },
 ];
 
 const Navbar = () => {
