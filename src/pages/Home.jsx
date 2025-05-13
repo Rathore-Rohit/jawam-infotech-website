@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Container,
@@ -12,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import theme from "../theme";
 import Underline from "../components/ui/Underline";
 import EastIcon from "@mui/icons-material/East";
+import { useTheme, useMediaQuery } from "@mui/material";
 
 // Swiper Imports for Carousel
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,6 +22,7 @@ import "swiper/css/pagination";
 
 // Banner Section
 import bannerImage from "../assets/bannerHome.jpeg";
+import bannerVideo from "../assets/bannerHomeVideo.mp4";
 
 // Our Technology
 import Backend from "../assets/backendHome.png";
@@ -31,26 +32,26 @@ const ourTechnologies = [
     src: Backend,
     heading: "Backend Technology",
     content: "Empowering scalable solutions with robust Backend Technologies.",
-    link: "/services/web-development",
+    link: "/technologies/backend",
   },
   {
     src: Devops,
     heading: "DevOps",
     content:
       "Bridging the gap between code and operations with DevOps mastery.",
-    link: "/services/full-stack-development",
+    link: "/technologies/devops",
   },
   {
     src: MobAppDev,
     heading: "Mobile App Development",
     content: "Crafting seamless mobile experiences with innovative tech.",
-    link: "/services/mobile-app-development",
+    link: "/technologies/mobile-app-development",
   },
   {
     src: WebDev,
     heading: "Frontend Technology",
     content: "Shaping digital experiences with Our Frontend Tech expertise.",
-    link: "/services/software-development",
+    link: "/technologies/frontend",
   },
 ];
 
@@ -242,6 +243,8 @@ const styles = {
 
 const Home = () => {
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <>
@@ -251,26 +254,48 @@ const Home = () => {
           position: "relative",
           width: "100%",
           height: "550px",
-          marginTop: {
+          mt: {
             xs: "90px",
             md: 0,
           },
+          overflow: "hidden",
         }}
       >
-        {/* Image as background */}
-        <Box
-          component="img"
-          src={bannerImage}
-          alt="Banner"
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: 0,
-          }}
-        />
+        {/* Video for Desktop, Image for Mobile */}
+        {!isMobile ? (
+          <Box
+            component="video"
+            src={bannerVideo}
+            poster={bannerImage}
+            autoPlay
+            muted
+            loop
+            playsInline
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "fill",
+              zIndex: 0,
+            }}
+          />
+        ) : (
+          <Box
+            component="img"
+            src={bannerImage}
+            alt="Banner"
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: 0,
+            }}
+          />
+        )}
 
         {/* Dark overlay */}
         <Box
@@ -397,7 +422,7 @@ const Home = () => {
                         height: 300,
                         borderRadius: 1,
                         boxShadow: isActive
-                          ? "0 0 25px 3px rgba(0, 0, 0, 0.1)"
+                          ? "rgba(7, 16, 63, 0.06) 0px 0px 16px 0px"
                           : 0,
                         transition: "box-shadow 0.3s ease-in-out",
                         px: 4,
@@ -449,6 +474,7 @@ const Home = () => {
                     </Box>
                     <Box
                       className="hoverBox"
+                      onClick={() => navigate(item.link)}
                       sx={{
                         ...styles.hoverBoxStyle,
                         bottom: -30,
@@ -674,7 +700,7 @@ const Home = () => {
                   sx={{
                     height: "100%",
                     borderRadius: 1,
-                    boxShadow: "0 0 15px 2px rgba(0, 0, 0, 0.06)",
+                    boxShadow: "rgba(7, 16, 63, 0.06) 0px 0px 10px 0px",
                     bgcolor: "#EEF9FF",
                   }}
                 >

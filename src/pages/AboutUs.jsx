@@ -1,8 +1,13 @@
 import React from "react";
 import Banner from "../components/common/Banner";
 import Underline from "../components/ui/Underline";
-import bannerImage from "../assets/bannerAbout.jpeg";
-import { Box, Stack, Typography } from "@mui/material";
+import bannerImage from "../assets/bannerAbout.jpg";
+import CEO from "../assets/shainkiGupta.jpeg";
+import linkedin from "../assets/linkedinWhite.jpg";
+import twitter from "../assets/twitter.jpeg";
+import wellfound from "../assets/wellfound2.jpg";
+import email from "../assets/email.png";
+import { Box, Stack, Typography, Card, Avatar, Link } from "@mui/material";
 import theme from "../theme";
 
 const ourValues = [
@@ -30,6 +35,29 @@ const ourValues = [
     heading: "5. Continuous improvement:",
     description:
       "We are committed to continuous improvement, always seeking new ways to enhance our skills, processes, and services.",
+  },
+];
+
+const contactPlatforms = [
+  {
+    imgSrc: linkedin,
+    alt: "LinkedIn",
+    path: "https://www.linkedin.com/company/jawam-infotech/about/",
+  },
+  {
+    imgSrc: email,
+    alt: "Email",
+    path: "https://www.linkedin.com/company/jawam-infotech/about/",
+  },
+  {
+    imgSrc: twitter,
+    alt: "Twitter",
+    path: "https://x.com/jawam23769?t=V5WOApqYT3XVQ_nFJKah9w&s=08",
+  },
+  {
+    imgSrc: wellfound,
+    alt: "Wellfound",
+    path: "https://wellfound.com/company/jawam-infotech-1",
   },
 ];
 
@@ -151,6 +179,99 @@ const AboutUs = () => {
             </Stack>
           </Box>
         </Stack>
+      </Box>
+
+      {/* Meet Our CEO */}
+      <Box component="section" sx={{ px: { xs: 3, sm: 0 }, pb: 12 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
+          <Typography
+            component="h5"
+            sx={{
+              color: theme.palette.text.secondary,
+              fontSize: { xs: "26px", sm: "28px" },
+              fontWeight: 800,
+              fontFamily: theme.typography.fontFamily,
+              textTransform: "uppercase",
+            }}
+          >
+            Meet Our CEO
+          </Typography>
+
+          <Underline
+            lineWidth="140px"
+            lineHeight="4px"
+            barWidth="5px"
+            mBottom={{ xs: 5, sm: 6 }}
+          />
+        </Box>
+
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Card
+            sx={{
+              maxWidth: 600,
+              p: 3,
+              boxShadow: "rgba(7, 16, 63, 0.06) 0px 0px 5px 0px",
+              backgroundColor: "#EEF9FF",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <Avatar
+                src={CEO}
+                alt="image"
+                sx={{ width: 120, height: 120, mb: 2 }}
+              />
+              <Typography variant="h6" fontWeight={700}>
+                Shainki Gupta
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                gutterBottom
+                sx={{ color: theme.palette.custom.paragraph }}
+              >
+                Founder & CEO – Jawam Infotech
+              </Typography>
+              <Typography
+                variant="body2"
+                textAlign="center"
+                sx={{ color: theme.palette.custom.paragraph, mt: 1 }}
+              >
+                With over a decade of experience in the IT industry, he leads
+                the company with innovation, integrity, and excellence.
+              </Typography>
+              <Box sx={{ display: "flex", gap: 2, mt: 2.5 }}>
+                {contactPlatforms.map(({ imgSrc, alt, path }) => (
+                  <Link href={path} target="_blank" rel="noopener noreferrer">
+                    <Box
+                      component="img"
+                      src={imgSrc}
+                      alt={alt}
+                      sx={{
+                        width: 30,
+                        height: 28,
+                        cursor: "pointer",
+                        borderRadius: 1.5,
+                      }}
+                    />
+                  </Link>
+                ))}
+              </Box>
+            </Box>
+          </Card>
+        </Box>
       </Box>
     </>
   );

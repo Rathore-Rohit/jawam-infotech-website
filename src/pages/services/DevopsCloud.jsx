@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "../../assets/bannerDevopsCloud.png";
+import bannerImage from "../../assets/bannerDevopsCloud.jpg";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
 import devopsCloud1 from "../../assets/devopsCloud1.jpeg";

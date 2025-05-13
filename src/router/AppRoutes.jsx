@@ -23,6 +23,10 @@ import Automotive from "../pages/industries/Automotive";
 import RetailEcommerce from "../pages/industries/RetailEcommerce";
 import LogisticsDistribution from "../pages/industries/LogisticsDistribution";
 import Construction from "../pages/industries/Construction";
+import Frontend from "../pages/technologies/Frontend";
+import Backend from "../pages/technologies/Backend";
+import MobAppDevelopment from "../pages/technologies/MobAppDevelopment";
+import Devops from "../pages/technologies/Devops";
 
 const AppRoutes = () => {
   return (
@@ -55,6 +59,12 @@ const AppRoutes = () => {
         <Route path="/industries/retail-ecommerce" element={<RetailEcommerce/>} />
         <Route path="/industries/logistics-distribution" element={<LogisticsDistribution/>} />
         <Route path="/industries/construction" element={<Construction/>} />
+
+        {/* Technologies */}
+        <Route path="/technologies/frontend" element={<Frontend/>} />
+        <Route path="/technologies/backend" element={<Backend/>} />
+        <Route path="/technologies/mobile-app-development" element={<MobAppDevelopment/>} />
+        <Route path="/technologies/devops" element={<Devops/>} />
       </Route>
     </Routes>
   );

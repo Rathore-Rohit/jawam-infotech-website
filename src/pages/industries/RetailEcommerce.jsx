@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "../../assets/bannerRetailEcom.jpeg";
+import bannerImage from "../../assets/bannerRetailEcom.jpg";
 import Banner from "../../components/common/Banner";
 import IndustriesMainSection from "../../components/ui/IndustriesMainSection";
 

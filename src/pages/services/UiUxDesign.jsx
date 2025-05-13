@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "../../assets/bannerUiUx.jpeg";
+import bannerImage from "../../assets/bannerUiUx.jpg";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
 import uiux1 from "../../assets/uiux1.jpeg";

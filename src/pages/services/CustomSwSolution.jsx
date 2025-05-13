@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "../../assets/bannerCustomSw.png";
+import bannerImage from "../../assets/bannerCustomSw.jpg";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
 import customSwSol1 from "../../assets/customSwSol1.jpg";

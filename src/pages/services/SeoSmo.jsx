@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "../../assets/bannerSeoSmo.png";
+import bannerImage from "../../assets/bannerSeoSmo.jpg";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
 import seoSmo1 from "../../assets/seoSmo1.jpeg";

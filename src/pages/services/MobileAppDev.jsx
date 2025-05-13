@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "../../assets/bannerMobApp.png";
+import bannerImage from "../../assets/bannerMobApp.jpg";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
 import mobileAppDev1 from "../../assets/mobileAppDev1.jpg";

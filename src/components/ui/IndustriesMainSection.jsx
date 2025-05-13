@@ -11,7 +11,7 @@ const IndustriesMainSection = ({ heading, cardData }) => {
         sx={{
           color: theme.palette.text.primary,
           fontFamily: theme.typography.fontFamily,
-          fontSize: {xs: "25px", md: "27px"},
+          fontSize: { xs: "25px", md: "27px" },
           fontWeight: 800,
           textTransform: "uppercase",
         }}

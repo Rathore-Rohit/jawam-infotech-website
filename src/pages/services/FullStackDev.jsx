@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "../../assets/bannerFullStack.jpeg";
+import bannerImage from "../../assets/bannerFullStack.jpg";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
 import fullStackDev1 from "../../assets/fullStackDev1.jpg";

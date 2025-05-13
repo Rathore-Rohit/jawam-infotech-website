@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "../../assets/bannerCrm.jpeg";
+import bannerImage from "../../assets/bannerCrm.jpg";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
 import crm1 from "../../assets/crm1.jpeg";
