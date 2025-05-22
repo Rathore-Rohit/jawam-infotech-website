@@ -1,8 +1,7 @@
-import React from "react";
-import bannerImage from "../../assets/bannerTpi.jpg";
+import bannerImage from "../../assets/bannerTpi.webp";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
-import thirdParty1 from "../../assets/thirdParty1.jpeg";
+import thirdParty1 from "../../assets/thirdParty1.webp";
 
 const ThirdPartyInt = () => {
   return (

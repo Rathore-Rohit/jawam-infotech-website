@@ -1,4 +1,3 @@
-import React from "react";
 import bannerImage from "../../assets/bannerHealthcare.jpg";
 import Banner from "../../components/common/Banner";
 import IndustriesMainSection from "../../components/ui/IndustriesMainSection";

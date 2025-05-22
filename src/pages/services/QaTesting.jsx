@@ -1,5 +1,4 @@
-import React from "react";
-import bannerImage from "../../assets/bannerQaTesting.jpg";
+import bannerImage from "../../assets/bannerQaTesting.webp";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
 import qaTesting1 from "../../assets/qaTesting1.jpeg";

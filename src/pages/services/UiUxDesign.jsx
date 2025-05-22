@@ -1,8 +1,7 @@
-import React from "react";
-import bannerImage from "../../assets/bannerUiUx.jpg";
+import bannerImage from "../../assets/bannerUiUx.webp";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
-import uiux1 from "../../assets/uiux1.jpeg";
+import uiux1 from "../../assets/uiux1.webp";
 
 const UiUxDesign = () => {
   return (

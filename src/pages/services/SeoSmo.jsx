@@ -1,8 +1,7 @@
-import React from "react";
 import bannerImage from "../../assets/bannerSeoSmo.jpg";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
-import seoSmo1 from "../../assets/seoSmo1.jpeg";
+import seoSmo1 from "../../assets/seoSmo1.webp";
 
 const SeoSmo = () => {
   return (

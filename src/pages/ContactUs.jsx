@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
   Grid,
@@ -10,7 +10,7 @@ import {
   Snackbar,
   Alert,
 } from "@mui/material";
-import bannerImage from "../assets/bannerContact.jpg";
+import bannerImage from "../assets/bannerContact.webp";
 import Banner from "../components/common/Banner";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
@@ -59,6 +59,8 @@ const ContactUs = () => {
   const [open, setOpen] = useState(false);
 
   const handleChange = (e) => {
+    const onlyNums = e.target.value.replace(/[^0-9]/g, "");
+    e.target.value = onlyNums;
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -204,6 +206,9 @@ const ContactUs = () => {
                     "& .MuiFormLabel-asterisk": {
                       display: "none",
                     },
+                  }}
+                  inputProps={{
+                  maxLength: 10,
                   }}
                   value={formData.contactNumber}
                   onChange={handleChange}

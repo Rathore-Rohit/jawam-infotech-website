@@ -1,8 +1,7 @@
-import React from "react";
-import bannerImage from "../../assets/bannerCustomSw.jpg";
+import bannerImage from "../../assets/bannerCustomSw.webp";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
-import customSwSol1 from "../../assets/customSwSol1.jpg";
+import customSwSol1 from "../../assets/customSwSol1.webp";
 
 const CustomSwSolution = () => {
   return (

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Grid,
@@ -13,6 +12,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import EastIcon from "@mui/icons-material/East";
+import StarIcon from "@mui/icons-material/Star";
 import theme from "../../theme";
 import Underline from "../ui/Underline";
 import linkedin from "../../assets/linkedin.png";
@@ -56,11 +56,13 @@ const reviews = [
     imgSrc: googleReviews,
     alt: "Google Reviews",
     path: "https://g.co/kgs/tDRtyyD",
+    rating: "5.0",
   },
   {
     imgSrc: goodFirms,
     alt: "Good Firms",
     path: "https://www.goodfirms.co/company/jawam-infotech",
+    rating: "5.0",
   },
 ];
 
@@ -68,6 +70,7 @@ const quickLinks = [
   { label: "Home", path: "/" },
   { label: "About Us", path: "/about" },
   { label: "Contact Us", path: "/contact" },
+  { label: "Career", path: "/career" },
 ];
 
 const services = [
@@ -219,7 +222,7 @@ const Footer = () => {
               ))}
             </Stack>
             <Stack direction="row" columnGap={3} sx={{ mt: 3 }}>
-              {reviews.map(({ imgSrc, alt, path }) => (
+              {reviews.map(({ imgSrc, alt, path, rating }) => (
                 <Link href={path} target="_blank" rel="noopener noreferrer">
                   <Box
                     component="img"
@@ -231,6 +234,19 @@ const Footer = () => {
                       borderRadius: 1.5,
                     }}
                   />
+                  <Typography
+                    sx={{
+                      color: theme.palette.custom.white,
+                      fontFamily: theme.typography.fontFamilySecondary,
+                      fontSize: "16px",
+                      display: "flex",
+                      alignItems: "center",
+                      mt: 0.5,
+                    }}
+                  >
+                    <StarIcon sx={{ fontSize: "18px", mr: 0.5, color: "#FFD700" }} />
+                    {rating}
+                  </Typography>
                 </Link>
               ))}
             </Stack>
@@ -350,7 +366,7 @@ const Footer = () => {
             textAlign: "center",
           }}
         >
-          © Jawam Infotech 2023. All Rights Reserved
+          © Jawam Infotech 2025. All Rights Reserved
         </Typography>
       </Box>
     </>

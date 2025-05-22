@@ -1,8 +1,7 @@
-import React from "react";
-import bannerImage from "../../assets/bannerFullStack.jpg";
+import bannerImage from "../../assets/bannerFullStack.webp";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
-import fullStackDev1 from "../../assets/fullStackDev1.jpg";
+import fullStackDev1 from "../../assets/fullStackDev1.webp";
 
 const FullStackDev = () => {
   return (

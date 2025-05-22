@@ -1,8 +1,7 @@
-import React from "react";
-import bannerImage from "../../assets/bannerCrm.jpg";
+import bannerImage from "../../assets/bannerCrm.webp";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
-import crm1 from "../../assets/crm1.jpeg";
+import crm1 from "../../assets/crm1.webp";
 
 const CrmCustomization = () => {
   return (

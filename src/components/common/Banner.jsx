@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Container, Typography, Link as MuiLink } from "@mui/material";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import { Link as RouterLink } from "react-router-dom";

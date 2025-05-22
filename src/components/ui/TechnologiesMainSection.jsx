@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Stack } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import theme from "../../theme";
 
 const TechnologiesMainSection = ({ heading, technologies }) => {

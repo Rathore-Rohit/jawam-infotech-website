@@ -1,5 +1,4 @@
-import React from "react";
-import bannerImage from "../../assets/bannerFinance.jpeg";
+import bannerImage from "../../assets/bannerFinance.webp";
 import Banner from "../../components/common/Banner";
 import IndustriesMainSection from "../../components/ui/IndustriesMainSection";
 

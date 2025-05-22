@@ -1,4 +1,4 @@
-import bannerImage from "../../assets/bannerMobAppDevelopment.jpg";
+import bannerImage from "../../assets/bannerMobAppDevelopment.webp";
 import Banner from "../../components/common/Banner";
 import WhyChooseUs from "../../components/ui/WhyChooseUs";
 import TechnologiesMainSection from "../../components/ui/TechnologiesMainSection";

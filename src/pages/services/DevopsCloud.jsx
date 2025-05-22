@@ -1,8 +1,7 @@
-import React from "react";
-import bannerImage from "../../assets/bannerDevopsCloud.jpg";
+import bannerImage from "../../assets/bannerDevopsCloud.webp";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
-import devopsCloud1 from "../../assets/devopsCloud1.jpeg";
+import devopsCloud1 from "../../assets/devopsCloud1.png";
 
 const DevopsCloud = () => {
   return (

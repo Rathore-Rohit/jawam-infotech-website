@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@mui/material";
 
 const Underline = ({ lineWidth, lineHeight, barWidth, mtop = 0, mBottom = 0 }) => {

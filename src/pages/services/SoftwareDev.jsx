@@ -1,8 +1,7 @@
-import React from "react";
 import bannerImage from "../../assets/bannerSwDevelopment.jpg";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
-import softwareDev1 from "../../assets/softwareDev1.jpeg";
+import softwareDev1 from "../../assets/softwareDev1.webp";
 
 const SoftwareDev = () => {
   return (
