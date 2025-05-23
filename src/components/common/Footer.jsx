@@ -140,6 +140,12 @@ const listItemStyle = {
     transform: "translateX(8px)",
     backgroundColor: "transparent",
   },
+   "&:focus": {
+    backgroundColor: "transparent",
+  },
+  "&:active": {
+    backgroundColor: "transparent",
+  },
 };
 
 const Footer = () => {
@@ -158,7 +164,6 @@ const Footer = () => {
       >
         <Grid container rowSpacing={11} columnSpacing={8}>
           <Grid
-            item
             size={{ xs: 12, md: 12, lg: 3.6 }}
             sx={{ display: "flex", flexDirection: "column" }}
           >
@@ -205,8 +210,8 @@ const Footer = () => {
               </Box>
             </Box>
             <Stack direction="row" columnGap={3} sx={{ mt: 3 }}>
-              {socialMedia.map(({ imgSrc, alt, path }) => (
-                <Link href={path} target="_blank" rel="noopener noreferrer">
+              {socialMedia.map(({ imgSrc, alt, path }, index) => (
+                <Link key={index} href={path} target="_blank" rel="noopener noreferrer">
                   <Box
                     component="img"
                     src={imgSrc}
@@ -222,8 +227,8 @@ const Footer = () => {
               ))}
             </Stack>
             <Stack direction="row" columnGap={3} sx={{ mt: 3 }}>
-              {reviews.map(({ imgSrc, alt, path, rating }) => (
-                <Link href={path} target="_blank" rel="noopener noreferrer">
+              {reviews.map(({ imgSrc, alt, path, rating }, index) => (
+                <Link key={index} href={path} target="_blank" rel="noopener noreferrer">
                   <Box
                     component="img"
                     src={imgSrc}
@@ -253,7 +258,6 @@ const Footer = () => {
           </Grid>
 
           <Grid
-            item
             size={{ xs: 12, md: 4, lg: 2.8 }}
             sx={{ display: "flex", flexDirection: "column" }}
           >
@@ -269,14 +273,14 @@ const Footer = () => {
 
             <Box>
               <List disablePadding>
-                {quickLinks.map(({ label, path }) => (
+                {quickLinks.map(({ label, path }, index) => (
                   <Link
-                    key={label}
+                    key={index}
                     component={RouterLink}
                     to={path}
-                    sx={{ textDecoration: "none" }}
+                    sx={{ textDecoration: "none", WebkitTapHighlightColor: "transparent" }}
                   >
-                    <ListItem disablePadding button sx={listItemStyle}>
+                    <ListItem disablePadding sx={listItemStyle}>
                       <EastIcon sx={{ color: "#06A3DA", fontSize: 20 }} />
                       {label}
                     </ListItem>
@@ -287,7 +291,6 @@ const Footer = () => {
           </Grid>
 
           <Grid
-            item
             size={{ xs: 12, md: 4, lg: 2.8 }}
             sx={{ display: "flex", flexDirection: "column" }}
           >
@@ -303,14 +306,14 @@ const Footer = () => {
 
             <Box>
               <List disablePadding>
-                {services.map(({ label, path }) => (
+                {services.map(({ label, path }, index) => (
                   <Link
-                    key={label}
+                    key={index}
                     component={RouterLink}
                     to={path}
-                    sx={{ textDecoration: "none" }}
+                    sx={{ textDecoration: "none", WebkitTapHighlightColor: "transparent" }}
                   >
-                    <ListItem disablePadding button sx={listItemStyle}>
+                    <ListItem disablePadding sx={listItemStyle}>
                       <EastIcon sx={{ color: "#06A3DA", fontSize: 20 }} />
                       {label}
                     </ListItem>
@@ -321,7 +324,6 @@ const Footer = () => {
           </Grid>
 
           <Grid
-            item
             size={{ xs: 12, md: 4, lg: 2.8 }}
             sx={{ display: "flex", flexDirection: "column" }}
           >
@@ -337,14 +339,14 @@ const Footer = () => {
 
             <Box>
               <List disablePadding>
-                {technology.map(({ label, path }) => (
+                {technology.map(({ label, path }, index) => (
                   <Link
-                    key={label}
+                    key={index}
                     component={RouterLink}
                     to={path}
-                    sx={{ textDecoration: "none", cursor: "text" }}
+                    sx={{ textDecoration: "none", cursor: "text", WebkitTapHighlightColor: "transparent" }}
                   >
-                    <ListItem disablePadding button sx={listItemStyle}>
+                    <ListItem disablePadding sx={listItemStyle}>
                       <EastIcon sx={{ color: "#06A3DA", fontSize: 20 }} />
                       {label}
                     </ListItem>

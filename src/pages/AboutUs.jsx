@@ -41,22 +41,22 @@ const contactPlatforms = [
   {
     imgSrc: linkedin,
     alt: "LinkedIn",
-    path: "https://www.linkedin.com/company/jawam-infotech/about/",
+    path: "https://www.linkedin.com/in/shainkigupta/",
   },
   {
     imgSrc: email,
     alt: "Email",
-    path: "https://www.linkedin.com/company/jawam-infotech/about/",
+    path: "mailto:shainkig@jawaminfotech.com",
   },
   {
     imgSrc: twitter,
     alt: "Twitter",
-    path: "https://x.com/jawam23769?t=V5WOApqYT3XVQ_nFJKah9w&s=08",
+    path: "https://x.com/shainki_gu71933?t=20atwb0GEyOYadcZd-3EyQ&s=08",
   },
   {
     imgSrc: wellfound,
     alt: "Wellfound",
-    path: "https://wellfound.com/company/jawam-infotech-1",
+    path: "https://wellfound.com/u/shainki-gupta-1",
   },
 ];
 

@@ -342,6 +342,7 @@ const ContactUs = () => {
                     Direct Contact
                   </Typography>
                   <Typography
+                    component="div"
                     sx={{
                       fontSize: "20px",
                       fontFamily: theme.typography.fontFamily,
@@ -365,6 +366,7 @@ const ContactUs = () => {
                     </Stack>
                   </Typography>
                   <Typography
+                    component="div"
                     sx={{
                       fontSize: "20px",
                       fontFamily: theme.typography.fontFamily,

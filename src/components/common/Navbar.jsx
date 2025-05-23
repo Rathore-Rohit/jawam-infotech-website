@@ -144,11 +144,11 @@ const Navbar = () => {
               pr={2.5}
               height="100%"
             >
-              {navItems.map(({ label, path, dropdown }) => {
+              {navItems.map(({ label, path, dropdown }, index) => {
                 const isDropdown = !!dropdown;
                 return (
                   <Box
-                    key={label}
+                    key={index}
                     component={isDropdown ? "div" : Link}
                     to={!isDropdown ? path : "#"}
                     onMouseEnter={() => isDropdown && setHoveredMenu(label)}
@@ -210,9 +210,9 @@ const Navbar = () => {
                           py: 1,
                         }}
                       >
-                        {dropdown.map(({ label: subLabel, path }) => (
+                        {dropdown.map(({ label: subLabel, path }, index) => (
                           <Typography
-                            key={subLabel}
+                            key={index}
                             component={Link}
                             to={path}
                             sx={{
@@ -254,14 +254,13 @@ const Navbar = () => {
       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
         <Box sx={{ width: 250, mt: 2 }}>
           <List>
-            {navItems.map(({ label, path, dropdown }) => {
+            {navItems.map(({ label, path, dropdown }, index) => {
               const isDropdown = !!dropdown;
               const key = label.toLowerCase();
 
               return (
-                <Box key={label}>
+                <Box key={index}>
                   <ListItem
-                    button
                     component={isDropdown ? "div" : Link}
                     to={!isDropdown ? path : "#"}
                     onClick={() => {
@@ -270,6 +269,13 @@ const Navbar = () => {
                       } else {
                         setDrawerOpen(false);
                       }
+                    }}
+                    sx={{
+                      backgroundColor: "transparent",
+                      "&:hover, &:focus, &:active": {
+                        backgroundColor: "transparent",
+                      },
+                      WebkitTapHighlightColor: "transparent",
                     }}
                   >
                     <Typography
@@ -297,13 +303,19 @@ const Navbar = () => {
                       unmountOnExit
                     >
                       <List component="div" disablePadding>
-                        {dropdown.map(({ label: subLabel, path }) => (
+                        {dropdown.map(({ label: subLabel, path }, index) => (
                           <ListItem
-                            key={subLabel}
-                            button
+                            key={index}
                             component={Link}
                             to={path}
                             onClick={() => setDrawerOpen(false)}
+                            sx={{
+                              backgroundColor: "transparent",
+                              "&:hover, &:focus, &:active": {
+                                backgroundColor: "transparent",
+                              },
+                              WebkitTapHighlightColor: "transparent",
+                            }}
                           >
                             <Typography
                               sx={{

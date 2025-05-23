@@ -65,7 +65,7 @@ const ServicesMainSection = ({
             </Typography>
             <Grid container mt={4}>
               {points.map((point) => (
-                <Grid size={{ xs: 12, sm: 6 }}>
+                <Grid key={point} size={{ xs: 12, sm: 6 }}>
                   <Box sx={{ display: "flex", pb: 1.5 }}>
                     <CheckIcon
                       sx={{
