@@ -1,7 +1,7 @@
 import bannerImage from "../../assets/bannerDevopsCloud.webp";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
-import devopsCloud1 from "../../assets/devopsCloud1.png";
+import devopsCloud1 from "../../assets/devCloud1.png";
 
 const DevopsCloud = () => {
   return (
