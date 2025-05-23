@@ -89,7 +89,11 @@ const Banner = ({ title, subTitle, image, currentPage }) => {
               sx={{
                 fontWeight: 500,
                 color: "#fff",
-                "&:hover": { color: "#ddd" },
+                WebkitTapHighlightColor: "transparent",
+                "&:hover": { color: "#ddd", backgroundColor: "transparent" },
+                "&:focus, &:active": {
+                  backgroundColor: "transparent",
+                },
               }}
             >
               Home
@@ -106,7 +110,11 @@ const Banner = ({ title, subTitle, image, currentPage }) => {
               sx={{
                 fontWeight: 500,
                 color: "#fff",
-                "&:hover": { color: "#ddd" },
+                WebkitTapHighlightColor: "transparent",
+                "&:hover": { color: "#ddd", backgroundColor: "transparent" },
+                "&:focus, &:active": {
+                  backgroundColor: "transparent",
+                },
               }}
             >
               {title}

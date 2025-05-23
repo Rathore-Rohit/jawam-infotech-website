@@ -271,7 +271,6 @@ const Navbar = () => {
                       }
                     }}
                     sx={{
-                      backgroundColor: "transparent",
                       "&:hover, &:focus, &:active": {
                         backgroundColor: "transparent",
                       },
@@ -310,7 +309,6 @@ const Navbar = () => {
                             to={path}
                             onClick={() => setDrawerOpen(false)}
                             sx={{
-                              backgroundColor: "transparent",
                               "&:hover, &:focus, &:active": {
                                 backgroundColor: "transparent",
                               },

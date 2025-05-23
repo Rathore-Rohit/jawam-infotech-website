@@ -44,7 +44,7 @@ const ourTechnologies = [
   {
     src: MobAppDev,
     heading: "Mobile App Development",
-    content: "Crafting seamless mobile experiences with innovative tech.",
+    content: "Creating mobile apps with innovative tech.",
     link: "/technologies/mobile-app-development",
   },
   {
@@ -113,7 +113,7 @@ const ourServices = [
   },
   {
     src: DevOpsCloud,
-    heading: "DevOps and Cloud Services",
+    heading: "DevOps and Cloud",
     content:
       "Where Development Meets Operations In The Cloud: Our expertise delivers.",
     link: "/services/devops-cloud",
@@ -228,8 +228,13 @@ const styles = {
     cursor: "pointer",
     opacity: 0,
     transition: "bottom 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease",
+    WebkitTapHighlightColor: "transparent",
     "&:hover": {
       boxShadow: "0 0 0 10px rgba(0, 174, 239, 0.2)",
+      backgroundColor: "transparent",
+    },
+    "&:focus, &:active": {
+      backgroundColor: "transparent",
     },
     "& svg": {
       fontSize: 20,
@@ -695,7 +700,7 @@ const Home = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <Box px={{ xs: 2, sm: 3 }} py={2}>
+              <Box px={{ xs: 1.5, sm: 3 }} py={2}>
                 <Card
                   sx={{
                     height: "100%",

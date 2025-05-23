@@ -46,8 +46,7 @@ const WhyChooseUs = () => {
       component="section"
       sx={{
         px: { xs: 3, sm: 6, lg: 14 },
-        pt: { xs: 2, md: 6, lg: 8 },
-        pb: { xs: 16, md: 18, lg: 16 },
+        py: 12,
       }}
     >
       <Box

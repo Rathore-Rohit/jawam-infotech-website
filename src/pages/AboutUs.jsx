@@ -253,7 +253,17 @@ const AboutUs = () => {
               </Typography>
               <Box sx={{ display: "flex", gap: 2, mt: 2.5 }}>
                 {contactPlatforms.map(({ imgSrc, alt, path }) => (
-                  <Link href={path} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      "&:hover, &:focus, &:active": {
+                        backgroundColor: "transparent",
+                      },
+                      WebkitTapHighlightColor: "transparent",
+                    }}
+                  >
                     <Box
                       component="img"
                       src={imgSrc}

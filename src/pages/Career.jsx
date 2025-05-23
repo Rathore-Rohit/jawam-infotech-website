@@ -1,7 +1,7 @@
 import React from "react";
-import bannerImage from "../../assets/bannerCareer.jpg";
-import Banner from "../../components/common/Banner";
-import Underline from "../../components/ui/Underline";
+import bannerImage from "../assets/bannerCareer.jpg";
+import Banner from "../components/common/Banner";
+import Underline from "../components/ui/Underline";
 import CloseIcon from "@mui/icons-material/Close";
 import {
   Typography,
@@ -314,7 +314,7 @@ const Career = () => {
       />
 
       {/* Main Section (Find Your Perfect Role and Grow with Us) */}
-      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, py: 12 }}>
+      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12, pb: 10 }}>
         <Box
           sx={{
             display: "flex",
@@ -411,7 +411,7 @@ const Career = () => {
             </IconButton>
           </DialogTitle>
 
-          <DialogContent dividers>
+          <DialogContent dividers sx={{ px: { xs: 2, sm: 3 } }}>
             <Typography
               variant="body2"
               gutterBottom

@@ -4,6 +4,7 @@ import Layout from "../layout/Layout";
 import Home from "../pages/Home";
 import AboutUs from "../pages/AboutUs";
 import ContactUs from "../pages/ContactUs";
+import Career from "../pages/Career";
 import SoftwareDev from "../pages/services/SoftwareDev";
 import WebDev from "../pages/services/WebDev";
 import FullStackDev from "../pages/services/FullStackDev";
@@ -27,7 +28,6 @@ import Frontend from "../pages/technologies/Frontend";
 import Backend from "../pages/technologies/Backend";
 import MobAppDevelopment from "../pages/technologies/MobAppDevelopment";
 import Devops from "../pages/technologies/Devops";
-import Career from "../pages/career/Career";
 import Loader from "../components/common/Loader";
 
 const AppRoutes = () => {

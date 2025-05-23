@@ -13,7 +13,7 @@ const ServicesMainSection = ({
 }) => {
   return (
     <>
-      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, py: 12 }}>
+      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12 }}>
         <Grid container spacing={6} alignItems="center">
           {/* Left Text Section */}
           <Grid size={{ xs: 12, md: 7 }}>

@@ -3,7 +3,7 @@ import theme from "../../theme";
 
 const IndustriesMainSection = ({ heading, cardData }) => {
   return (
-    <Box sx={{ px: { xs: 2, sm: 4, md: 8, lg: 12 }, pt: 12, pb: 18 }}>
+    <Box sx={{ px: { xs: 2, sm: 4, md: 8, lg: 12 }, py: 12 }}>
       <Typography
         component="h3"
         align="center"

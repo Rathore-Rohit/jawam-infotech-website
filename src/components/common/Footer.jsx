@@ -140,7 +140,7 @@ const listItemStyle = {
     transform: "translateX(8px)",
     backgroundColor: "transparent",
   },
-   "&:focus": {
+  "&:focus": {
     backgroundColor: "transparent",
   },
   "&:active": {
@@ -211,7 +211,18 @@ const Footer = () => {
             </Box>
             <Stack direction="row" columnGap={3} sx={{ mt: 3 }}>
               {socialMedia.map(({ imgSrc, alt, path }, index) => (
-                <Link key={index} href={path} target="_blank" rel="noopener noreferrer">
+                <Link
+                  key={index}
+                  href={path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    "&:hover, &:focus, &:active": {
+                      backgroundColor: "transparent",
+                    },
+                    WebkitTapHighlightColor: "transparent",
+                  }}
+                >
                   <Box
                     component="img"
                     src={imgSrc}
@@ -228,7 +239,18 @@ const Footer = () => {
             </Stack>
             <Stack direction="row" columnGap={3} sx={{ mt: 3 }}>
               {reviews.map(({ imgSrc, alt, path, rating }, index) => (
-                <Link key={index} href={path} target="_blank" rel="noopener noreferrer">
+                <Link
+                  key={index}
+                  href={path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    "&:hover, &:focus, &:active": {
+                      backgroundColor: "transparent",
+                    },
+                    WebkitTapHighlightColor: "transparent",
+                  }}
+                >
                   <Box
                     component="img"
                     src={imgSrc}
@@ -249,7 +271,9 @@ const Footer = () => {
                       mt: 0.5,
                     }}
                   >
-                    <StarIcon sx={{ fontSize: "18px", mr: 0.5, color: "#FFD700" }} />
+                    <StarIcon
+                      sx={{ fontSize: "18px", mr: 0.5, color: "#FFD700" }}
+                    />
                     {rating}
                   </Typography>
                 </Link>
@@ -278,7 +302,10 @@ const Footer = () => {
                     key={index}
                     component={RouterLink}
                     to={path}
-                    sx={{ textDecoration: "none", WebkitTapHighlightColor: "transparent" }}
+                    sx={{
+                      textDecoration: "none",
+                      WebkitTapHighlightColor: "transparent",
+                    }}
                   >
                     <ListItem disablePadding sx={listItemStyle}>
                       <EastIcon sx={{ color: "#06A3DA", fontSize: 20 }} />
@@ -311,7 +338,10 @@ const Footer = () => {
                     key={index}
                     component={RouterLink}
                     to={path}
-                    sx={{ textDecoration: "none", WebkitTapHighlightColor: "transparent" }}
+                    sx={{
+                      textDecoration: "none",
+                      WebkitTapHighlightColor: "transparent",
+                    }}
                   >
                     <ListItem disablePadding sx={listItemStyle}>
                       <EastIcon sx={{ color: "#06A3DA", fontSize: 20 }} />
@@ -344,7 +374,11 @@ const Footer = () => {
                     key={index}
                     component={RouterLink}
                     to={path}
-                    sx={{ textDecoration: "none", cursor: "text", WebkitTapHighlightColor: "transparent" }}
+                    sx={{
+                      textDecoration: "none",
+                      cursor: "text",
+                      WebkitTapHighlightColor: "transparent",
+                    }}
                   >
                     <ListItem disablePadding sx={listItemStyle}>
                       <EastIcon sx={{ color: "#06A3DA", fontSize: 20 }} />
