@@ -1,7 +1,7 @@
 import bannerImage from "../../assets/bannerSeoSmo.jpg";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
-import seoSmo1 from "../../assets/seoSmo1.webp";
+import seoSmo1 from "../../assets/seosmo1.webp";
 
 const SeoSmo = () => {
   return (
