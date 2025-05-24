@@ -44,7 +44,7 @@ const ourTechnologies = [
   {
     src: MobAppDev,
     heading: "Mobile App Development",
-    content: "Creating mobile apps with innovative tech.",
+    content: "Crafting seamless mobile experiences with innovative tech.",
     link: "/technologies/mobile-app-development",
   },
   {
@@ -231,7 +231,6 @@ const styles = {
     WebkitTapHighlightColor: "transparent",
     "&:hover": {
       boxShadow: "0 0 0 10px rgba(0, 174, 239, 0.2)",
-      backgroundColor: "transparent",
     },
     "&:focus, &:active": {
       backgroundColor: "transparent",
