@@ -29,6 +29,7 @@ import Backend from "../pages/technologies/Backend";
 import MobAppDevelopment from "../pages/technologies/MobAppDevelopment";
 import Devops from "../pages/technologies/Devops";
 import Loader from "../components/common/Loader";
+import StaffAugmentation from "../pages/services/StaffAugmentation";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -50,7 +51,7 @@ const AppRoutes = () => {
           <Route path="" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/career" element={<Career />} />
+          <Route path="/careers" element={<Career />} />
 
           {/* Services */}
           <Route path="/services/software-development" element={<SoftwareDev />} />
@@ -64,6 +65,7 @@ const AppRoutes = () => {
           <Route path="/services/third-party-integration" element={<ThirdPartyInt />} />
           <Route path="/services/crm-customization" element={<CrmCustomization />} />
           <Route path="/services/seo-smo" element={<SeoSmo />} />
+          <Route path="/services/staff-augmentation" element={<StaffAugmentation />} />
 
           {/* Industries */}
           <Route path="/industries/healthcare" element={<Healthcare />} />

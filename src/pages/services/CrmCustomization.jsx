@@ -9,7 +9,7 @@ const CrmCustomization = () => {
       {/* Banner Section */}
       <Banner
         title="CRM Customization"
-        subTitle={`Your CRM, Your Way:\nCustomization excellence at your service.`}
+        subTitle={`Your CRM, Your Way:\nCustomization excellence at your service`}
         image={bannerImage}
         currentPage="services/crm-customization"
       />

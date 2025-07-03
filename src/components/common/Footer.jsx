@@ -12,7 +12,6 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import EastIcon from "@mui/icons-material/East";
-import StarIcon from "@mui/icons-material/Star";
 import theme from "../../theme";
 import Underline from "../ui/Underline";
 import linkedin from "../../assets/linkedin.png";
@@ -20,8 +19,6 @@ import facebook from "../../assets/facebook.png";
 import instagram from "../../assets/instagram.png";
 import twitter from "../../assets/twitter.jpeg";
 import wellfound from "../../assets/wellfound.jpg";
-import googleReviews from "../../assets/googleReviews.png";
-import goodFirms from "../../assets/goodFirms.png";
 
 const socialMedia = [
   {
@@ -51,26 +48,11 @@ const socialMedia = [
   },
 ];
 
-const reviews = [
-  {
-    imgSrc: googleReviews,
-    alt: "Google Reviews",
-    path: "https://g.co/kgs/tDRtyyD",
-    rating: "5.0",
-  },
-  {
-    imgSrc: goodFirms,
-    alt: "Good Firms",
-    path: "https://www.goodfirms.co/company/jawam-infotech",
-    rating: "5.0",
-  },
-];
-
 const quickLinks = [
   { label: "Home", path: "/" },
   { label: "About Us", path: "/about" },
   { label: "Contact Us", path: "/contact" },
-  { label: "Career", path: "/career" },
+  { label: "Careers", path: "/career" },
 ];
 
 const services = [
@@ -97,6 +79,7 @@ const services = [
   },
   { label: "CRM Customization", path: "/services/crm-customization" },
   { label: "SEO/SMO", path: "/services/seo-smo" },
+  { label: "IT Staff Augmentation", path: "/services/staff-augmentation" },
 ];
 
 const technology = [
@@ -164,7 +147,7 @@ const Footer = () => {
       >
         <Grid container rowSpacing={11} columnSpacing={8}>
           <Grid
-            size={{ xs: 12, md: 12, lg: 3.6 }}
+            size={{ xs: 12, md: 12, xl: 3.6 }}
             sx={{ display: "flex", flexDirection: "column" }}
           >
             <Typography sx={headingStyle}>Get In Touch</Typography>
@@ -237,52 +220,10 @@ const Footer = () => {
                 </Link>
               ))}
             </Stack>
-            <Stack direction="row" columnGap={3} sx={{ mt: 3 }}>
-              {reviews.map(({ imgSrc, alt, path, rating }, index) => (
-                <Link
-                  key={index}
-                  href={path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    "&:hover, &:focus, &:active": {
-                      backgroundColor: "transparent",
-                    },
-                    WebkitTapHighlightColor: "transparent",
-                  }}
-                >
-                  <Box
-                    component="img"
-                    src={imgSrc}
-                    alt={alt}
-                    sx={{
-                      width: 111,
-                      height: 55,
-                      borderRadius: 1.5,
-                    }}
-                  />
-                  <Typography
-                    sx={{
-                      color: theme.palette.custom.white,
-                      fontFamily: theme.typography.fontFamilySecondary,
-                      fontSize: "16px",
-                      display: "flex",
-                      alignItems: "center",
-                      mt: 0.5,
-                    }}
-                  >
-                    <StarIcon
-                      sx={{ fontSize: "18px", mr: 0.5, color: "#FFD700" }}
-                    />
-                    {rating}
-                  </Typography>
-                </Link>
-              ))}
-            </Stack>
           </Grid>
 
           <Grid
-            size={{ xs: 12, md: 4, lg: 2.8 }}
+            size={{ xs: 12, md: 4, xl: 2.8 }}
             sx={{ display: "flex", flexDirection: "column" }}
           >
             <Typography sx={headingStyle}>Quick Links</Typography>
@@ -318,7 +259,7 @@ const Footer = () => {
           </Grid>
 
           <Grid
-            size={{ xs: 12, md: 4, lg: 2.8 }}
+            size={{ xs: 12, md: 4, xl: 2.8 }}
             sx={{ display: "flex", flexDirection: "column" }}
           >
             <Typography sx={headingStyle}>Services</Typography>
@@ -354,7 +295,7 @@ const Footer = () => {
           </Grid>
 
           <Grid
-            size={{ xs: 12, md: 4, lg: 2.8 }}
+            size={{ xs: 12, md: 4, xl: 2.8 }}
             sx={{ display: "flex", flexDirection: "column" }}
           >
             <Typography sx={headingStyle}>Technology</Typography>
@@ -402,7 +343,7 @@ const Footer = () => {
             textAlign: "center",
           }}
         >
-          © Jawam Infotech 2025. All Rights Reserved
+          © Jawam Infotech 2025. All Rights Reserved.
         </Typography>
       </Box>
     </>

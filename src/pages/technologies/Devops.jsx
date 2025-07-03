@@ -16,7 +16,7 @@ const Devops = () => {
       {/* Banner Section */}
       <Banner
         title="DevOps"
-        subTitle={`Agility, Automation, and Efficiency\n– Our DevOps Core Principles.`}
+        subTitle={`Agility, Automation, and Efficiency\nReflect Our DevOps Core Principles`}
         image={bannerImage}
         currentPage="technologies/devops"
       />

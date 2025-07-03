@@ -9,7 +9,7 @@ const ThirdPartyInt = () => {
       {/* Banner Section */}
       <Banner
         title="Third-Party Integration"
-        subTitle={`Our Ecosystem, Our Integration:\nMaking it all work together.`}
+        subTitle={`Our Ecosystem, Our Integration:\nMaking it all work together`}
         image={bannerImage}
         currentPage="services/third-party-integration"
       />

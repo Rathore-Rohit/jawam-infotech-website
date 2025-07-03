@@ -9,7 +9,7 @@ const FullStackDev = () => {
       {/* Banner Section */}
       <Banner
         title="Full-Stack Development"
-        subTitle={`From frontend to backend, We're your\nFull-Stack dream team.`}
+        subTitle={`From frontend to backend, We're your\nFull-Stack dream team`}
         image={bannerImage}
         currentPage="services/full-stack-development"
       />

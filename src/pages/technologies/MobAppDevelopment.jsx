@@ -17,7 +17,7 @@ const MobAppDevelopment = () => {
       {/* Banner Section */}
       <Banner
         title="Mobile App Development"
-        subTitle={`Your Mobile Success\nStarts with Our Tech Innovation.`}
+        subTitle={`Your Mobile Success\nStarts with Our Tech Innovation`}
         image={bannerImage}
         currentPage="technologies/mobile-app-development"
       />

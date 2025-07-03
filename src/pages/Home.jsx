@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   Box,
   Container,
@@ -12,6 +13,12 @@ import theme from "../theme";
 import Underline from "../components/ui/Underline";
 import EastIcon from "@mui/icons-material/East";
 import { useTheme, useMediaQuery } from "@mui/material";
+
+// import softwareDev1 from "../assets/softwareDev1.webp";
+
+// For Animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Swiper Imports for Carousel
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -67,6 +74,7 @@ import DevOpsCloud from "../assets/devopsCloudHome.png";
 import TPI from "../assets/tpiHome.png";
 import CRM from "../assets/crmHome.png";
 import SEO from "../assets/seoHome.png";
+import StaffAugmentation from "../assets/staffAug.png";
 const ourServices = [
   {
     src: SoftDev,
@@ -139,35 +147,44 @@ const ourServices = [
       "Transforming clicks into connections with SEO and SMO excellence.",
     link: "/services/seo-smo",
   },
+  {
+    src: StaffAugmentation,
+    heading: "IT Staff Augmentation",
+    content:
+      "Providing skilled developers to extend your team with speed and precision.",
+    link: "/services/staff-augmentation",
+  },
 ];
 
 // Industries
-import Industries from "../assets/industriesHome.jpeg";
-const paragraph1 = `As a leading IT service company, Jawam Infotech specializes in
-crafting innovative solutions that address the unique needs and
-challenges across diverse sectors. Our commitment to
-technology-driven excellence allows us to reshape industries
-globally, ensuring that our clients stay ahead in an era marked by
-rapid technological advancements.`;
-const paragraph2 = `In today's dynamic business environment, organizations encounter a
-multitude of challenges and opportunities. At Jawam Infotech, we
-embrace this complexity, leveraging our extensive expertise to
-deliver customized solutions that drive operational efficiency.
-Our approach is focused on enhancing customer experiences and
-fostering sustainable growth, enabling businesses to navigate the
-evolving landscape with confidence.`;
-const paragraph3 = `Through a deep understanding of industry-specific requirements, we
-collaborate closely with our clients to develop strategies that
-are not only effective but also forward-thinking. By integrating
-cutting-edge technologies and innovative methodologies, Jawam
-Infotech is dedicated to empowering businesses to thrive in a
-competitive marketplace, transforming challenges into
-opportunities for success.`;
+// import Industries from "../assets/industriesHome.jpeg";
+// const paragraph1 = `As a leading IT service company, Jawam Infotech specializes in
+// crafting innovative solutions that address the unique needs and
+// challenges across diverse sectors. Our commitment to
+// technology-driven excellence allows us to reshape industries
+// globally, ensuring that our clients stay ahead in an era marked by
+// rapid technological advancements.`;
+// const paragraph2 = `In today's dynamic business environment, organizations encounter a
+// multitude of challenges and opportunities. At Jawam Infotech, we
+// embrace this complexity, leveraging our extensive expertise to
+// deliver customized solutions that drive operational efficiency.
+// Our approach is focused on enhancing customer experiences and
+// fostering sustainable growth, enabling businesses to navigate the
+// evolving landscape with confidence.`;
+// const paragraph3 = `Through a deep understanding of industry-specific requirements, we
+// collaborate closely with our clients to develop strategies that
+// are not only effective but also forward-thinking. By integrating
+// cutting-edge technologies and innovative methodologies, Jawam
+// Infotech is dedicated to empowering businesses to thrive in a
+// competitive marketplace, transforming challenges into
+// opportunities for success.`;
 
 // Words of Praise
 import Client1 from "../assets/sanjeevKumar.jpeg";
 import Client2 from "../assets/rajeshMunde.jpeg";
 import Client3 from "../assets/amolChoudhary.jpeg";
+import ReviewsSection from '../components/ui/ReviewsSection';
+import IndustriesSection from '../components/ui/IndustriesWeServe';
 const testimonials = [
   {
     name: "Sanjeev Kumar",
@@ -184,7 +201,7 @@ const testimonials = [
   {
     name: "Amol Choudhary",
     title: "Founder & CEO",
-    content: `At Infinitive, we needed a partner who understood data and could craft a creative, audience-focused service website and we found that in Jawam Infotech. Its skilled team delivered a well-researched, tailored design with clear milestones. Their unique ideas and attention to detail greatly enhanced our website. I look forward to working with them again, as their collaborative approach and dedication made the entire process smooth and effective.`,
+    content: `At Infinitive, we needed a partner who understood data and could craft a creative, audience-focused service website, and we found that in Jawam Infotech. Its skilled and professional team delivered a well-researched, tailored design with clear milestones. Their unique ideas, innovative solutions, and attention to detail greatly enhanced our website. I genuinely look forward to working with them again, as their collaborative approach and dedication made the entire process smooth and highly effective.`,
     avatar: Client3,
   },
 ];
@@ -195,7 +212,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    px: { xs: 1, sm: 12, md: 26, lg: 46 },
+    px: { xs: 1, sm: 12, md: 26, lg: 48, xl: 48 },
     gap: 1.5,
   },
   heading: {
@@ -232,7 +249,7 @@ const styles = {
     "&:hover": {
       boxShadow: "0 0 0 10px rgba(0, 174, 239, 0.2)",
     },
-    "&:focus, &:active": {
+    "&:focus": {
       backgroundColor: "transparent",
     },
     "& svg": {
@@ -250,6 +267,10 @@ const Home = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <>
       {/* Banner Section */}
@@ -257,7 +278,7 @@ const Home = () => {
         sx={{
           position: "relative",
           width: "100%",
-          height: "550px",
+          height: "570px",
           mt: {
             xs: "90px",
             md: 0,
@@ -309,7 +330,7 @@ const Home = () => {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(9, 30, 62, 0.7)",
+            backgroundColor: "rgba(9, 30, 62, 0.6)",
             zIndex: 1,
           }}
         />
@@ -362,7 +383,7 @@ const Home = () => {
       </Box>
 
       {/* Our Technology */}
-      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12 }}>
+      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, pt: 12 }}>
         <Box sx={styles.commonBox}>
           <Typography component="h5" sx={styles.heading}>
             Our Technology
@@ -495,7 +516,7 @@ const Home = () => {
       </Box>
 
       {/* Our Services */}
-      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12 }}>
+      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, pt: 12 }}>
         <Box sx={styles.commonBox}>
           <Typography component="h5" sx={styles.heading}>
             Our Services
@@ -515,7 +536,7 @@ const Home = () => {
 
         <Grid container spacing={{ xs: 6, md: 8 }}>
           {ourServices.map((item) => (
-            <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={item.heading}>
+            <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={item.heading} data-aos="fade-up">
               <Box
                 sx={{
                   height: 300,
@@ -588,7 +609,7 @@ const Home = () => {
       </Box>
 
       {/* Industries */}
-      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12 }}>
+      {/* <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12 }}>
         <Box sx={styles.commonBox}>
           <Typography
             component="h5"
@@ -623,6 +644,7 @@ const Home = () => {
               alignItems: "center",
               justifyContent: "center",
             }}
+            data-aos="zoom-in"
           >
             <Box
               component="img"
@@ -659,10 +681,41 @@ const Home = () => {
             ))}
           </Grid>
         </Grid>
-      </Box>
+      </Box> */}
+
+
+      {/* <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12 }}>
+        <Grid container columnSpacing={8}>
+          <Grid size={{md: 3}}>
+            <Grid container direction="column">
+              <Grid size={{md: 8}} sx={{ width: "100%"}}>
+                            <Box sx={{ width: "100%", p: 10, backgroundColor: "red"}}></Box>
+              </Grid>
+              <Grid size={{md: 4}}>
+                            <Box
+                              component="img"
+                              src={softwareDev1}
+                              alt="Image"
+                              sx={{
+                                width: "100%",
+                                height: "auto",
+                                borderRadius: 2,
+                              }}
+                            />
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid size={{md: 3}}>B</Grid>
+          <Grid size={{md: 3}}>C</Grid>
+          <Grid size={{md: 3}}>D</Grid>
+        </Grid>
+      </Box> */}
+
+
+      <IndustriesSection/>
 
       {/* Words of Praise  */}
-      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, py: 12 }}>
+      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, py: 12 }}>
         <Box sx={styles.commonBox}>
           <Typography component="h5" sx={styles.heading}>
             Words of Praise
@@ -705,7 +758,7 @@ const Home = () => {
                     height: "100%",
                     borderRadius: 1,
                     boxShadow: "rgba(7, 16, 63, 0.06) 0px 0px 10px 0px",
-                    bgcolor: "#EEF9FF",
+                    backgroundColor: "#EEF9FF",
                   }}
                 >
                   <CardContent>
@@ -741,6 +794,8 @@ const Home = () => {
           ))}
         </Swiper>
       </Box>
+
+      <ReviewsSection />
     </>
   );
 };

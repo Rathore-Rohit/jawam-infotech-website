@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import bannerImage from "../assets/bannerCareer.jpg";
 import Banner from "../components/common/Banner";
 import Underline from "../components/ui/Underline";
@@ -245,6 +247,95 @@ const jobData = [
       "Effective verbal and written communication.",
     ],
   },
+  {
+    title: "Data Science Engineer",
+    location: "Indore, Madhya Pradesh, India",
+    type: "Full-Time",
+    mode: "Onsite",
+    jobDescription:
+      " We’re looking for a Data Science Engineer to develop data pipelines, build robust ML models, and deliver end-to-end data solutions. You’ll collaborate with product and engineering teams to extract insights, drive automation, and support scalable decision-making.",
+    keyResponsibilities: [
+      "Analyze large datasets to identify trends, patterns, and actionable insights.",
+      "Build and deploy predictive models using machine learning algorithms.",
+      "Work closely with product, engineering, and business teams to translate goals into data solutions.",
+      "Visualize data insights through dashboards and reports using tools like Power BI or Tableau.",
+      "Ensure data integrity and apply best practices for data validation and cleaning.",
+    ],
+    skillsQualifications: [
+      "2–4 years of experience in Data Science or Analytics roles.",
+      "Proficiency in Python (Pandas, NumPy, Scikit-learn), SQL.",
+      "Experience with data visualization tools (e.g., Tableau, Power BI, Matplotlib).",
+      "Experience with cloud platforms (AWS, GCP, or Azure).",
+      "Familiarity with Big Data tools (Spark, Hadoop).",
+      "Exposure to NLP, Time Series, or Deep Learning is a plus.",
+      "Knowledge of ML algorithms like regression, classification, clustering, etc.",
+      "Hands-on with Jupyter, Google Colab, or other notebook environments.",
+      "Strong analytical and problem-solving skills.",
+      "Excellent communication and documentation abilities.",
+    ],
+  },
+  {
+    title: "AI/ML Engineer",
+    location: "Indore, Madhya Pradesh, India",
+    type: "Full-Time",
+    mode: "Onsite",
+    jobDescription:
+      "We’re hiring an AI/ML Engineer to build and deploy smart solutions using machine learning, NLP, and LLMs. You'll turn data into intelligent products that solve real business problems.",
+    keyResponsibilities: [
+      "Design, develop, and deploy AI/ML solutions, including LLM and NLP models, for various business use cases.",
+      "Build, train, and fine-tune machine learning models using structured and unstructured data.",
+      "Integrate LLM and ML models into applications, APIs, and platforms.",
+      "Implement RAG (Retrieval-Augmented Generation) pipelines to enhance response quality in AI systems.",
+      "Containerize models with Docker for consistent deployment across environments.",
+      "Establish monitoring, evaluation, and feedback loops to ensure reliable model performance in production.",
+      "Collaborate with cross-functional teams to convert business needs into AI/ML solutions.",
+    ],
+    skillsQualifications: [
+      "2–4 years of experience in AI/ML development or related fields.",
+      "Strong proficiency in Python and ML libraries such as Scikit-learn, TensorFlow, PyTorch.",
+     	"Experience with NLP libraries like Hugging Face Transformers, spaCy, NLTK.",
+ 	    "Familiarity with LLM-based services and architectures.",
+      "Good understanding of data preprocessing, feature engineering, and model evaluation.",
+      "Experience with containerization tools like Docker.",
+      "Experience with vector databases and retrieval systems like FAISS or Pinecone.",
+      "Understanding of LLMOps practices: model monitoring, logging, evaluation pipelines.",
+      "Cloud experience (AWS, GCP, Azure) for deploying AI/ML services.",
+      "Knowledge of MLflow, LangChain, or related orchestration tools.",
+      "Experience with API integration, microservices, or cloud-native architectures.",
+      "Strong problem-solving and communication skills.",
+    ],
+  },
+  {
+    title: "Full Stack Python Developer",
+    location: "Indore, Madhya Pradesh, India",
+    type: "Full-Time",
+    mode: "Onsite",
+    jobDescription:
+      "We’re looking for a Full Stack Python Developer to build powerful back-end APIs and contribute to modern, responsive front-end interfaces. You’ll play a key role in delivering scalable web solutions from concept to deployment.",
+    keyResponsibilities: [
+      "Design, develop, and maintain RESTful APIs using Flask or FastAPI frameworks.",
+      "Develop intuitive front-end interfaces using HTML, CSS, JavaScript, and modern JS frameworks (React.js preferred).",
+      "Work with databases (SQL/NoSQL) to store, retrieve, and process data efficiently.",
+      "Ensure seamless integration between front-end and back-end components.",
+  	  "Deploy applications using Docker, CI/CD pipelines, and cloud platforms.",
+    	"Debug, test, and maintain code for high performance and scalability.",
+    	"Collaborate with UI/UX designers and other developers for end-to-end delivery.",
+    ],
+    skillsQualifications: [
+      "1–5 years of hands-on experience in Python web development using Flask or FastAPI.",
+    	"Strong knowledge of front-end technologies like HTML5, CSS3, JavaScript (React.js, Vue.js, or similar).",
+ 	    "Experience with relational and/or NoSQL databases (e.g., PostgreSQL, MySQL, MongoDB).",
+      "Experience with Docker, CI/CD, or container-based deployments.",
+      "Knowledge of cloud services (AWS, GCP, or Azure).",
+    	"Understanding of authentication (OAuth2, JWT) and API security.",
+    	"Exposure to testing frameworks like PyTest, Postman, or Swagger.",
+    	"Familiarity with agile development processes and tools like JIRA or Trello.",
+ 	    "Familiarity with RESTful API design principles and integration.",
+ 	    "Working knowledge of version control tools like Git.",
+ 	    "Basic understanding of security best practices and performance optimization.",
+      "Good communication skills and ability to work in cross-functional teams.",
+    ],
+  },
 ];
 
 const Career = () => {
@@ -273,7 +364,7 @@ const Career = () => {
 
     try {
       const res = await fetch(
-        "https://formsubmit.co/www.rohitrathore304@gmail.com",
+        "https://formsubmit.co/resume@jawaminfotech.com",
         {
           method: "POST",
           body: formData,
@@ -303,11 +394,15 @@ const Career = () => {
     }
   }, [alert]);
 
+  React.useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <>
       {/* Banner Section */}
       <Banner
-        title="Career"
+        title="Careers"
         subTitle={`Join Us to Build\nInnovative Digital Solutions`}
         image={bannerImage}
         currentPage="career"
@@ -358,6 +453,7 @@ const Career = () => {
               alignItems: isMobile ? "flex-start" : "center",
               gap: 2,
             }}
+            data-aos="fade-up"
           >
             <Box>
               <Typography variant="h6" fontWeight="bold">

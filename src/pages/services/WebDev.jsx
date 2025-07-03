@@ -9,7 +9,7 @@ const WebDev = () => {
       {/* Banner Section */}
       <Banner
         title="Web Development"
-        subTitle={`Web Development Wizards: Bringing\nyour digital dreams to life.`}
+        subTitle={`Web Development Wizards: Bringing\nyour digital dreams to life`}
         image={bannerImage}
         currentPage="services/web-development"
       />

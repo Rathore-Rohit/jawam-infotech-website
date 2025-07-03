@@ -9,7 +9,7 @@ const SeoSmo = () => {
       {/* Banner Section */}
       <Banner
         title="SEO/SMO"
-        subTitle={`Boosting your online presence\nwith SEO/SMO excellence.`}
+        subTitle={`Boosting your online presence\nwith SEO/SMO excellence`}
         image={bannerImage}
         currentPage="services/seo-smo"
       />

@@ -9,7 +9,7 @@ const Banner = ({ title, subTitle, image, currentPage }) => {
       sx={{
         position: "relative",
         width: "100%",
-        height: "550px",
+        height: "570px",
         mt: { xs: "90px", md: 0 },
       }}
     >
@@ -36,7 +36,7 @@ const Banner = ({ title, subTitle, image, currentPage }) => {
           left: 0,
           width: "100%",
           height: "100%",
-          bgcolor: "rgba(9, 30, 62, 0.7)",
+          bgcolor: "rgba(9, 30, 62, 0.5)",
           zIndex: 1,
         }}
       />

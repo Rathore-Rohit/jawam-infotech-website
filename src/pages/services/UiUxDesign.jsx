@@ -9,7 +9,7 @@ const UiUxDesign = () => {
       {/* Banner Section */}
       <Banner
         title="UI/UX Design"
-        subTitle={`Elevating engagement through\ninnovative UI/UX expertise.`}
+        subTitle={`Elevating engagement through\ninnovative UI/UX expertise`}
         image={bannerImage}
         currentPage="services/ui-ux-design"
       />

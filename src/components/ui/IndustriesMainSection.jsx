@@ -1,7 +1,14 @@
+import { useEffect } from "react";
 import { Box, Grid, Typography } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import theme from "../../theme";
 
 const IndustriesMainSection = ({ heading, cardData }) => {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <Box sx={{ px: { xs: 2, sm: 4, md: 8, lg: 12 }, py: 12 }}>
       <Typography
@@ -34,15 +41,23 @@ const IndustriesMainSection = ({ heading, cardData }) => {
               display: "flex",
               justifyContent: "center",
             }}
+            data-aos="fade-up"
           >
             <Box
               sx={{
                 width: "90%",
                 minHeight: 250,
-                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
-                border: "0.8px solid rgb(222, 226, 230)",
                 p: 2.5,
                 backgroundColor: "#fff",
+                border: "0.8px solid rgb(222, 226, 230)",
+                boxShadow: "rgba(7, 16, 63, 0.06) 0px 0px 16px 0px",
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                willChange: "transform",
+                backfaceVisibility: "hidden", // prevents flickering or shifting
+                "&:hover": {
+                  transform: "translateY(-8px) scale(1.03)",
+                  boxShadow: "0 8px 30px rgba(0, 0, 0, 0.04)",
+                },
               }}
             >
               <Typography

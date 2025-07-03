@@ -59,9 +59,15 @@ const ContactUs = () => {
   const [open, setOpen] = useState(false);
 
   const handleChange = (e) => {
-    const onlyNums = e.target.value.replace(/[^0-9]/g, "");
-    e.target.value = onlyNums;
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+
+    const updatedValue =
+      name === "contactNumber" ? value.replace(/[^0-9]/g, "") : value;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: updatedValue,
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -101,7 +107,7 @@ const ContactUs = () => {
       {/* Banner Section */}
       <Banner
         title="Contact Us"
-        subTitle={`We Jawam Infotech are here to help!\nWe're friendly and available to chat. Reach out to us\nanytime and we'll happily answer your questions.`}
+        subTitle={`We Jawam Infotech are here to help!\nWe're friendly and available to chat. Reach out to us\nanytime and we'll happily answer your questions`}
         image={bannerImage}
         currentPage="contact"
       />
@@ -208,7 +214,7 @@ const ContactUs = () => {
                     },
                   }}
                   inputProps={{
-                  maxLength: 10,
+                    maxLength: 10,
                   }}
                   value={formData.contactNumber}
                   onChange={handleChange}

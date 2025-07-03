@@ -1,4 +1,4 @@
-import bannerImage from "../../assets/bannerSwDevelopment.jpg";
+import bannerImage from "../../assets/bannerSwDevelopment.webp";
 import Banner from "../../components/common/Banner";
 import ServicesMainSection from "../../components/ui/ServicesMainSection";
 import softwareDev1 from "../../assets/softwareDev1.webp";
@@ -9,7 +9,7 @@ const SoftwareDev = () => {
       {/* Banner Section */}
       <Banner
         title="Software Development"
-        subTitle={`We are turning visions into reality\nthrough expert software craftsmanship.`}
+        subTitle={`We are turning visions into reality\nthrough expert software craftsmanship`}
         image={bannerImage}
         currentPage="services/software-development"
       />

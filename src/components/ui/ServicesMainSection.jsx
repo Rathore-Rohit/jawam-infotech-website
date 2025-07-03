@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import { Box, Grid, Typography } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import theme from "../../theme";
 import Underline from "../../components/ui/Underline";
 import CheckIcon from "@mui/icons-material/Check";
@@ -11,6 +14,10 @@ const ServicesMainSection = ({
   points,
   imgSrc,
 }) => {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <>
       <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12 }}>
@@ -92,7 +99,7 @@ const ServicesMainSection = ({
           </Grid>
 
           {/* Right Image Section */}
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid size={{ xs: 12, md: 5 }} data-aos="zoom-in">
             <Box
               component="img"
               src={imgSrc}

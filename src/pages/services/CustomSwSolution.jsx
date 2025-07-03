@@ -9,7 +9,7 @@ const CustomSwSolution = () => {
       {/* Banner Section */}
       <Banner
         title="Custom Software Solutions"
-        subTitle={`Turning your challenges into customized\nsoftware triumphs.`}
+        subTitle={`Turning your challenges into customized\nsoftware triumphs`}
         image={bannerImage}
         currentPage="services/custom-software-solutions"
       />

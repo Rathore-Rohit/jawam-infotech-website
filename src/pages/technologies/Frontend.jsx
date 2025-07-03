@@ -19,7 +19,7 @@ const Frontend = () => {
       {/* Banner Section */}
       <Banner
         title="Frontend"
-        subTitle={`Elevating User Engagement\nThrough Innovative Frontend Technologies.`}
+        subTitle={`Elevating User Engagement\nThrough Innovative Frontend Technologies`}
         image={bannerImage}
         currentPage="technologies/frontend"
       />

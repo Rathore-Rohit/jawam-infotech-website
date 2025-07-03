@@ -9,7 +9,7 @@ const DevopsCloud = () => {
       {/* Banner Section */}
       <Banner
         title="DevOps and Cloud Services"
-        subTitle={`Fueling efficiency and innovation with\nDevOps and Cloud expertise.`}
+        subTitle={`Fueling efficiency and innovation with\nDevOps and Cloud expertise`}
         image={bannerImage}
         currentPage="services/devops-cloud"
       />

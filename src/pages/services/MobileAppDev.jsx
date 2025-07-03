@@ -9,7 +9,7 @@ const MobileAppDev = () => {
       {/* Banner Section */}
       <Banner
         title="Mobile App Development"
-        subTitle={`Crafting User-Centric mobile experiences\nwith precision.`}
+        subTitle={`Crafting User-Centric mobile experiences\nwith precision`}
         image={bannerImage}
         currentPage="services/mobile-app-development"
       />

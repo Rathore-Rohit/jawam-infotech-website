@@ -3,7 +3,7 @@ import theme from "../../theme";
 
 const TechnologiesMainSection = ({ heading, technologies }) => {
   return (
-    <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, py: 12 }}>
+    <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12 }}>
       <Typography
         sx={{
           textAlign: "center",
@@ -47,7 +47,7 @@ const TechnologiesMainSection = ({ heading, technologies }) => {
         <Grid container spacing={5}>
           {technologies.map((item) => (
             <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={item.heading}>
-              <Box sx={{ p: 2, boxShadow: 3, borderRadius: 2 }}>
+              <Box sx={{ boxSizing: "border-box", height: "150px", p: 2, boxShadow: "rgba(7, 16, 63, 0.06) 0px 0px 16px 0px", borderRadius: 2 }}>
                 <Box
                   sx={{
                     display: "flex",

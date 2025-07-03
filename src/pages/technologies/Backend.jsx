@@ -19,7 +19,7 @@ const Backend = () => {
       {/* Banner Section */}
       <Banner
         title="Backend"
-        subTitle={`Revolutionising Mobility of backend\nwith Advanced backend Technologies.`}
+        subTitle={`Revolutionising Mobility of backend\nwith Advanced backend Technologies`}
         image={bannerImage}
         currentPage="technologies/backend"
       />

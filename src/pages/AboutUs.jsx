@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Banner from "../components/common/Banner";
 import Underline from "../components/ui/Underline";
 import bannerImage from "../assets/bannerAbout.webp";
@@ -6,7 +10,16 @@ import linkedin from "../assets/linkedinWhite.jpg";
 import twitter from "../assets/twitter.jpeg";
 import wellfound from "../assets/wellfound2.jpg";
 import email from "../assets/email.png";
-import { Box, Stack, Typography, Card, Avatar, Link } from "@mui/material";
+import {
+  Box,
+  Stack,
+  Typography,
+  Card,
+  Avatar,
+  Link,
+  Grid,
+  Button,
+} from "@mui/material";
 import theme from "../theme";
 
 const ourValues = [
@@ -83,12 +96,18 @@ const styles = {
 };
 
 const AboutUs = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <>
       {/* Banner Section */}
       <Banner
         title="About Us"
-        subTitle={`Empowering Your Digital\nJourney with Innovative Solutions.`}
+        subTitle={`Empowering Your Digital\nJourney with Innovative Solutions`}
         image={bannerImage}
         currentPage="about"
       />
@@ -211,7 +230,10 @@ const AboutUs = () => {
           />
         </Box>
 
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box
+          sx={{ display: "flex", justifyContent: "center" }}
+          data-aos="fade-up"
+        >
           <Card
             sx={{
               maxWidth: 600,
@@ -252,8 +274,9 @@ const AboutUs = () => {
                 the company with innovation, integrity, and excellence.
               </Typography>
               <Box sx={{ display: "flex", gap: 2, mt: 2.5 }}>
-                {contactPlatforms.map(({ imgSrc, alt, path }) => (
+                {contactPlatforms.map(({ imgSrc, alt, path }, index) => (
                   <Link
+                    key={index}
                     href={path}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -281,6 +304,66 @@ const AboutUs = () => {
             </Box>
           </Card>
         </Box>
+      </Box>
+
+      {/* Join Our Team */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          px: { xs: 3, sm: 5, md: 10, lg: 28 },
+          pb: 12,
+        }}
+      >
+        <Typography
+          component="h5"
+          sx={{
+            color: theme.palette.text.secondary,
+            fontSize: { xs: "26px", sm: "28px" },
+            fontWeight: 800,
+            fontFamily: theme.typography.fontFamily,
+            textTransform: "uppercase",
+          }}
+        >
+          Join Our Team
+        </Typography>
+        <Underline
+          lineWidth="140px"
+          lineHeight="4px"
+          barWidth="5px"
+          mtop={0.8}
+          mBottom={{ xs: 5, sm: 4 }}
+        />
+        <Typography
+          sx={{
+            color: theme.palette.custom.paragraph,
+            fontFamily: theme.typography.fontFamilySecondary,
+            fontSize: "17px",
+            fontWeight: 400,
+            lineHeight: "28px",
+            textAlign: "center",
+          }}
+        >
+          Does joining a mission-driven fintech company that’s disrupting the
+          financial services industry sound exciting to you? We’re always
+          looking for new talent to join our team. See available openings on our
+          Careers page.
+        </Typography>
+        <Button
+          onClick={() => navigate("/careers")}
+          sx={{
+            backgroundColor: "#06A3DA",
+            textTransform: "capitalize",
+            fontSize: "16px",
+            color: "white",
+            px: 2,
+            py: 1,
+            mt: 3.2,
+          }}
+        >
+          Visit our Careers page
+        </Button>
       </Box>
     </>
   );

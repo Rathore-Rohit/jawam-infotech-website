@@ -14,7 +14,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useEffect, useState, useCallback } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import WhiteLogo from "../../assets/white-jawam-logo.png";
 import Logo from "../../assets/jawam-logo.png";
 
@@ -47,6 +47,7 @@ const navItems = [
       },
       { label: "CRM Customization", path: "/services/crm-customization" },
       { label: "SEO/SMO", path: "/services/seo-smo" },
+      { label: "IT Staff Augmentation", path: "/services/staff-augmentation" },
     ],
   },
   {
@@ -65,11 +66,12 @@ const navItems = [
       { label: "Construction", path: "/industries/construction" },
     ],
   },
+  { label: "Careers", path: "/careers" },
   { label: "Contact Us", path: "/contact" },
-  { label: "Career", path: "/career" },
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -134,6 +136,7 @@ const Navbar = () => {
             src={logoSrc}
             alt="Jawam Infotech Logo"
             sx={{ width: 87, ml: { md: 2.8 }, cursor: "pointer" }}
+            onClick={() => navigate("/")}
           />
 
           {isDesktop ? (

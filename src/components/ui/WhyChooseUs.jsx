@@ -131,7 +131,7 @@ const WhyChooseUs = () => {
               </Typography>
             </Box>
           </Grid>
-          <Grid size={{ xs: 12, md: 4 }}>
+          <Grid size={{ xs: 12, md: 4 }} data-aos="zoom-in">
             <Box
               component="img"
               src={whyChooseUs}
