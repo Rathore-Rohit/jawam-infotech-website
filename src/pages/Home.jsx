@@ -212,7 +212,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    px: { xs: 1, sm: 12, md: 26, lg: 48, xl: 48 },
+    px: { xs: 1, sm: 12, md: 26, lg: 42, xl: 48 },
     gap: 1.5,
   },
   heading: {
