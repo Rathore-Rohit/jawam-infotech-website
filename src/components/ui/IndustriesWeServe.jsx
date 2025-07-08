@@ -217,7 +217,7 @@ const IndustriesSection = () => {
   };
 
   return (
-    <Box sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, pt: 12 }}>
+    <Box sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 0 }, pt: 12 }}>
       <Box sx={styles.commonBox}>
         <Typography component="h5" sx={styles.heading}>
           Industries We Serve
@@ -304,7 +304,7 @@ const IndustriesSection = () => {
           sx={{
             display: "flex",
             flexDirection: "row",
-            gap: 3,
+            gap: {xs: 3, xl: 4},
             justifyContent: "center",
           }}
           data-aos="fade-up"
@@ -315,7 +315,7 @@ const IndustriesSection = () => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 3,
+                gap: {xs: 3, xl: 4},
               }}
             >
               {column.map((item, i) => (
@@ -324,7 +324,7 @@ const IndustriesSection = () => {
                   onClick={() => handleClick(item.path)}
                   sx={{
                     ...cardStyles(item),
-                    width: 240,
+                    width: {xs: 240, xl: 260},
                     mt: { lg: item.tall ? 2.5 : 0 },
                     cursor: "pointer",
                     transition: "transform 0.3s ease",

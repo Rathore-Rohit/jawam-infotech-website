@@ -212,8 +212,8 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    px: { xs: 1, sm: 12, md: 26, lg: 42, xl: 48 },
     gap: 1.5,
+    whiteSpace: {sm: "pre-line"},
   },
   heading: {
     color: theme.palette.text.primary,
@@ -390,8 +390,7 @@ const Home = () => {
           </Typography>
 
           <Typography component="h1" sx={styles.subHeading}>
-            Elevating businesses With State-Of-The-Art Technology At Jawam
-            Infotech
+            {`Elevating businesses With\nState-Of-The-Art Technology\nAt Jawam Infotech`}
           </Typography>
 
           <Underline
@@ -523,7 +522,7 @@ const Home = () => {
           </Typography>
 
           <Typography component="h1" sx={styles.subHeading}>
-            Custom IT Solutions For Your Successful Business
+            {`Custom IT Solutions For Your\nSuccessful Business`}
           </Typography>
 
           <Underline
@@ -722,7 +721,7 @@ const Home = () => {
           </Typography>
 
           <Typography component="h1" sx={styles.subHeading}>
-            Client stories that inspire and validate our work
+            {`Client stories that inspire and\nvalidate our work`}
           </Typography>
 
           <Underline

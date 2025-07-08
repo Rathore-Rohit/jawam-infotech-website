@@ -180,6 +180,7 @@ const Navbar = () => {
                         color: theme.palette.text.primary,
                         transition: "0.5s ease",
                       },
+                      WebkitTapHighlightColor: "transparent",
                     }}
                   >
                     <Typography

@@ -415,7 +415,6 @@ const Career = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            px: { xs: 1, sm: 12, md: 26, lg: 50 },
             gap: 1.5,
           }}
         >
@@ -427,9 +426,10 @@ const Career = () => {
               fontWeight: 900,
               color: theme.palette.text.secondary,
               lineHeight: { xs: "36px", sm: "42px", md: "46px", lg: "48px" },
+              whiteSpace: {sm: "pre-line"},
             }}
           >
-            Find Your Perfect Role and Grow with Us
+            {`Find Your Perfect Role and\nGrow with Us`}
           </Typography>
 
           <Underline
