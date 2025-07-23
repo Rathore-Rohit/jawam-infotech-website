@@ -39,7 +39,7 @@ const ReviewsSection = () => {
     <Box
       component="section"
       sx={{
-        pb: 12,
+        py: 12,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import {
   Box,
   Container,
@@ -14,11 +14,9 @@ import Underline from "../components/ui/Underline";
 import EastIcon from "@mui/icons-material/East";
 import { useTheme, useMediaQuery } from "@mui/material";
 
-// import softwareDev1 from "../assets/softwareDev1.webp";
-
 // For Animation
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Swiper Imports for Carousel
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -156,53 +154,40 @@ const ourServices = [
   },
 ];
 
-// Industries
-// import Industries from "../assets/industriesHome.jpeg";
-// const paragraph1 = `As a leading IT service company, Jawam Infotech specializes in
-// crafting innovative solutions that address the unique needs and
-// challenges across diverse sectors. Our commitment to
-// technology-driven excellence allows us to reshape industries
-// globally, ensuring that our clients stay ahead in an era marked by
-// rapid technological advancements.`;
-// const paragraph2 = `In today's dynamic business environment, organizations encounter a
-// multitude of challenges and opportunities. At Jawam Infotech, we
-// embrace this complexity, leveraging our extensive expertise to
-// deliver customized solutions that drive operational efficiency.
-// Our approach is focused on enhancing customer experiences and
-// fostering sustainable growth, enabling businesses to navigate the
-// evolving landscape with confidence.`;
-// const paragraph3 = `Through a deep understanding of industry-specific requirements, we
-// collaborate closely with our clients to develop strategies that
-// are not only effective but also forward-thinking. By integrating
-// cutting-edge technologies and innovative methodologies, Jawam
-// Infotech is dedicated to empowering businesses to thrive in a
-// competitive marketplace, transforming challenges into
-// opportunities for success.`;
-
 // Words of Praise
 import Client1 from "../assets/sanjeevKumar.jpeg";
 import Client2 from "../assets/rajeshMunde.jpeg";
 import Client3 from "../assets/amolChoudhary.jpeg";
-import ReviewsSection from '../components/ui/ReviewsSection';
-import IndustriesSection from '../components/ui/IndustriesWeServe';
+import Client4 from "../assets/geeta.jpg";
+import ReviewsSection from "../components/ui/ReviewsSection";
+import IndustriesSection from "../components/ui/IndustriesWeServe";
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
+import OurTrustedPartners from "../components/ui/OurTrustedPartners";
+
 const testimonials = [
   {
     name: "Sanjeev Kumar",
     title: "Founder & COO",
-    content: `Working with Jawam Infotech has been a rewarding experience for Dev Lab Alliance. Their team’s professionalism, technical expertise, and commitment to timely delivery have consistently added value to our projects. Their ability to quickly understand our requirements and deliver innovative, scalable solutions has made a significant impact on our workflow and project success. Jawam Infotech has proven to be a trusted technology partner, and we look forward to continuing this collaboration on future initiative.`,
     avatar: Client1,
+    content: `Partnering with Jawam Infotech has truly elevated our projects at Dev Lab Alliance. Their deep technical skills, sharp understanding, and reliable delivery made a strong impact on our workflows. A tech partner we trust and look forward to working with again.`,
   },
   {
     name: "Rajesh Munde",
     title: "Founder & CEO",
-    content: `I have had an outstanding opportunity of collaborating with Jawam Infotech. The sales team from Jawam Infotech has done the splendid job for Pure Technology, The resource alignment with Jawam Infotech was seamless, and their technical team delivered outstanding results. Their innovative, dedicated approach and timely delivery make them a valuable partner. ‘Your Journey to Innovation’ truly reflects their work, and we look forward to continued collaboration.`,
+    content: `Collaborating with Jawam Infotech for Pure Technology has been a seamless and rewarding experience. Their sales and technical teams were proactive, well-aligned, and delivered excellent results with innovation and speed. A truly reliable and dedicated partner we look forward to many more successful projects together.`,
     avatar: Client2,
   },
   {
     name: "Amol Choudhary",
     title: "Founder & CEO",
-    content: `At Infinitive, we needed a partner who understood data and could craft a creative, audience-focused service website, and we found that in Jawam Infotech. Its skilled and professional team delivered a well-researched, tailored design with clear milestones. Their unique ideas, innovative solutions, and attention to detail greatly enhanced our website. I genuinely look forward to working with them again, as their collaborative approach and dedication made the entire process smooth and highly effective.`,
+    content: `Jawam Infotech brought clarity and creativity to our project at Infinitive. Their team crafted a user-focused website with precision, innovation, and clear milestones. The process was smooth, collaborative, and we’d be happy to collaborate with them again on future projects.`,
     avatar: Client3,
+  },
+  {
+    name: "Geeta Borikar",
+    title: "Founder",
+    content: `Had a fantastic experience working with Jawam Infotech on our website design. Their team was professional, creative, and highly responsive. The final site looks modern, works flawlessly across devices, and truly reflects our brand. They made the whole process smooth and collaborative. I’d highly recommend their services to anyone looking for top-notch website design.`,
+    avatar: Client4,
   },
 ];
 
@@ -213,7 +198,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     gap: 1.5,
-    whiteSpace: {sm: "pre-line"},
+    whiteSpace: { sm: "pre-line" },
   },
   heading: {
     color: theme.palette.text.primary,
@@ -383,7 +368,10 @@ const Home = () => {
       </Box>
 
       {/* Our Technology */}
-      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, pt: 12 }}>
+      <Box
+        component="section"
+        sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, pt: 12 }}
+      >
         <Box sx={styles.commonBox}>
           <Typography component="h5" sx={styles.heading}>
             Our Technology
@@ -450,7 +438,7 @@ const Home = () => {
                           : 0,
                         transition: "box-shadow 0.3s ease-in-out",
                         px: 4,
-                        py: 6,
+                        py: { xs: 1, sm: 0 },
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
@@ -515,7 +503,10 @@ const Home = () => {
       </Box>
 
       {/* Our Services */}
-      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, pt: 12 }}>
+      <Box
+        component="section"
+        sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, pt: 12 }}
+      >
         <Box sx={styles.commonBox}>
           <Typography component="h5" sx={styles.heading}>
             Our Services
@@ -535,7 +526,11 @@ const Home = () => {
 
         <Grid container spacing={{ xs: 6, md: 8 }}>
           {ourServices.map((item) => (
-            <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={item.heading} data-aos="fade-up">
+            <Grid
+              size={{ xs: 12, sm: 6, lg: 4 }}
+              key={item.heading}
+              data-aos="fade-up"
+            >
               <Box
                 sx={{
                   height: 300,
@@ -608,113 +603,34 @@ const Home = () => {
       </Box>
 
       {/* Industries */}
-      {/* <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12 }}>
-        <Box sx={styles.commonBox}>
-          <Typography
-            component="h5"
-            sx={{
-              color: theme.palette.text.secondary,
-              fontSize: "20px",
-              fontWeight: 800,
-              fontFamily: theme.typography.fontFamily,
-              textTransform: "uppercase",
-            }}
-          >
-            Industries
+      <IndustriesSection />
+
+      {/* Our Trusted Partners */}
+      <Box component="section" sx={{ pt: 14 }}>
+        <Box sx={{ ...styles.commonBox, px: 3 }}>
+          <Typography component="h5" sx={styles.heading}>
+            Our Trusted Partners
+          </Typography>
+
+          <Typography component="h1" sx={styles.subHeading}>
+            {`Proven industry-leading partners in\ninnovation and excellence `}
           </Typography>
 
           <Underline
             lineWidth="140px"
             lineHeight="4px"
             barWidth="5px"
-            mBottom={{ xs: 5, sm: 7 }}
+            mBottom={{ xs: 6, sm: 7 }}
           />
         </Box>
-
-        <Grid
-          container
-          columnSpacing={{ xs: 0, lg: 6 }}
-          rowSpacing={{ xs: 4, sm: 5, md: 6 }}
-        >
-          <Grid
-            size={{ xs: 12, lg: 6 }}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            data-aos="zoom-in"
-          >
-            <Box
-              component="img"
-              src={Industries}
-              sx={{
-                width: { xs: "320px", sm: "550px", md: "650px", lg: "600px" },
-              }}
-            />
-          </Grid>
-
-          <Grid
-            size={{ xs: 12, lg: 6 }}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            {[paragraph1, paragraph2, paragraph3].map((text, index) => (
-              <Typography
-                key={index}
-                sx={{
-                  textAlign: "justify",
-                  mt: 2,
-                  mb: 2,
-                  fontFamily: theme.typography.fontFamilySecondary,
-                  fontSize: "16px",
-                  color: theme.palette.custom.paragraph,
-                }}
-              >
-                {text}
-              </Typography>
-            ))}
-          </Grid>
-        </Grid>
-      </Box> */}
-
-
-      {/* <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 14 }, pt: 12 }}>
-        <Grid container columnSpacing={8}>
-          <Grid size={{md: 3}}>
-            <Grid container direction="column">
-              <Grid size={{md: 8}} sx={{ width: "100%"}}>
-                            <Box sx={{ width: "100%", p: 10, backgroundColor: "red"}}></Box>
-              </Grid>
-              <Grid size={{md: 4}}>
-                            <Box
-                              component="img"
-                              src={softwareDev1}
-                              alt="Image"
-                              sx={{
-                                width: "100%",
-                                height: "auto",
-                                borderRadius: 2,
-                              }}
-                            />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid size={{md: 3}}>B</Grid>
-          <Grid size={{md: 3}}>C</Grid>
-          <Grid size={{md: 3}}>D</Grid>
-        </Grid>
-      </Box> */}
-
-
-      <IndustriesSection/>
+        <OurTrustedPartners />
+      </Box>
 
       {/* Words of Praise  */}
-      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, py: 12 }}>
+      <Box
+        component="section"
+        sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, pt: 12 }}
+      >
         <Box sx={styles.commonBox}>
           <Typography component="h5" sx={styles.heading}>
             Words of Praise
@@ -745,8 +661,8 @@ const Home = () => {
           loop={true}
           breakpoints={{
             0: { slidesPerView: 1 },
-            600: { slidesPerView: 1 },
-            1024: { slidesPerView: 2 },
+            600: { slidesPerView: 2 },
+            1200: { slidesPerView: 3 },
           }}
         >
           {testimonials.map((testimonial, index) => (
@@ -754,38 +670,67 @@ const Home = () => {
               <Box px={{ xs: 1.5, sm: 3 }} py={2}>
                 <Card
                   sx={{
-                    height: "100%",
+                    height: {
+                      md: "370px",
+                      lg: "440px",
+                      xl: "390px",
+                    },
                     borderRadius: 1,
                     boxShadow: "rgba(7, 16, 63, 0.06) 0px 0px 10px 0px",
                     backgroundColor: "#EEF9FF",
+                    position: "relative",
+                    overflow: "visible",
+                    py: { xs: 1, sm: 2, md: 2 },
+                    px: { xs: 2, sm: 0.5, md: 2, lg: 1, xl: 0 },
                   }}
                 >
+                  <FormatQuoteIcon
+                    sx={{
+                      fontSize: 70,
+                      position: "absolute",
+                      top: -30,
+                      left: 20,
+                      transform: "rotate(180deg)",
+                      zIndex: 1,
+                    }}
+                  />
                   <CardContent>
-                    <Box display="flex" alignItems="center" mb={2}>
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      mb={2}
+                    >
                       <Avatar
                         src={testimonial.avatar}
-                        sx={{ width: 56, height: 56, mr: 2 }}
+                        sx={{ width: 86, height: 86 }}
                       />
-                      <Box>
-                        <Typography fontWeight="bold">
-                          {testimonial.name}
-                        </Typography>
-                        <Typography
-                          sx={{ color: theme.palette.custom.paragraph }}
-                        >
-                          {testimonial.title}
-                        </Typography>
-                      </Box>
                     </Box>
                     <Typography
                       sx={{
-                        textAlign: "justify",
+                        textAlign: "center",
                         whiteSpace: "pre-line",
                         color: theme.palette.custom.paragraph,
                       }}
                     >
                       {testimonial.content}
                     </Typography>
+                    <Box
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                      mt={2}
+                    >
+                      <Typography fontWeight="bold">
+                        {testimonial.name}
+                      </Typography>
+                      <Typography
+                        sx={{ color: theme.palette.custom.paragraph }}
+                      >
+                        {testimonial.title}
+                      </Typography>
+                    </Box>
                   </CardContent>
                 </Card>
               </Box>
@@ -794,6 +739,7 @@ const Home = () => {
         </Swiper>
       </Box>
 
+      {/* Trusted by Clients  */}
       <ReviewsSection />
     </>
   );

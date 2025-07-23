@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
@@ -19,8 +18,6 @@ import Retail from "../../assets/retailHome.webp";
 import theme from "../../theme";
 import Underline from "./Underline";
 import { useNavigate } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const cardStyles = (item) => ({
   position: "relative",
@@ -202,9 +199,6 @@ const styles = {
 };
 
 const IndustriesSection = () => {
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
 
   const themeMedia = useTheme();
   const isMobile = useMediaQuery(themeMedia.breakpoints.down("lg"));
@@ -238,7 +232,6 @@ const IndustriesSection = () => {
             flexDirection: "column",
             gap: { xs: 2.5, sm: 3.5, md: 4.5, lg: 6 },
           }}
-          data-aos="fade-up"
         >
           {mobileRows.map((row, i) => (
             <Box
@@ -307,7 +300,6 @@ const IndustriesSection = () => {
             gap: {xs: 3, xl: 4},
             justifyContent: "center",
           }}
-          data-aos="fade-up"
         >
           {desktopData.map((column, colIndex) => (
             <Box
