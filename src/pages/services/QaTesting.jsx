@@ -8,7 +8,7 @@ const QaTesting = () => {
     <>
       {/* Banner Section */}
       <Banner
-        title="QA Testing"
+        title="Quality Assurance"
         subTitle={`Ensuring software excellence through\nrigorous QA Testing`}
         image={bannerImage}
         currentPage="services/qa-testing"
@@ -16,8 +16,8 @@ const QaTesting = () => {
 
       {/* Main Content */}
       <ServicesMainSection
-        title="QA Testing"
-        heading="Ensuring software excellence through rigorous QA Testing."
+        title="Quality Assurance"
+        heading="Ensuring software excellence through rigorous QA Testing"
         description={`We believe that effective QA testing are crucial for the success of any software project. Our QA Testing services are designed to be thorough, efficient, and tailored to the unique needs of your business.\n\nWe test individual functions and features of your software to ensure they work as intended. We evaluate the speed, stability, and responsiveness of your software under various conditions to identify and address performance bottlenecks. Here's what sets our QA Testing services apart:`}
         points={[
           "Customized Testing Strategies",

@@ -48,6 +48,9 @@ const navItems = [
       { label: "CRM Customization", path: "/services/crm-customization" },
       { label: "SEO/SMO", path: "/services/seo-smo" },
       { label: "IT Staff Augmentation", path: "/services/staff-augmentation" },
+      { label: "Artificial Intelligence", path: "/services/artificial-intelligence" },
+      { label: "Data Engineering", path: "/services/data-engineering" },
+      { label: "Digital Analytics", path: "/services/digital-analytics" },
     ],
   },
   {
@@ -186,7 +189,7 @@ const Navbar = () => {
                     <Typography
                       className="nav-link"
                       sx={{
-                        fontWeight: 500,
+                        fontWeight: 400,
                         fontSize: "18px",
                         fontFamily: theme.typography.fontFamily,
                         display: "flex",
@@ -227,7 +230,7 @@ const Navbar = () => {
                               textDecoration: "none",
                               fontSize: "16px",
                               fontFamily: theme.typography.fontFamily,
-                              fontWeight: 500,
+                              fontWeight: 400,
                               color: theme.palette.text.secondary,
                               "&:hover": { backgroundColor: "#f0f0f0" },
                             }}
@@ -285,7 +288,7 @@ const Navbar = () => {
                       sx={{
                         fontSize: "18px",
                         fontFamily: theme.typography.fontFamily,
-                        fontWeight: 500,
+                        fontWeight: 400,
                         color: theme.palette.text.secondary,
                       }}
                     >
@@ -325,7 +328,7 @@ const Navbar = () => {
                                 lineHeight: 1.2,
                                 fontSize: "16px",
                                 fontFamily: theme.typography.fontFamily,
-                                fontWeight: 500,
+                                fontWeight: 400,
                                 color: theme.palette.text.secondary,
                               }}
                             >

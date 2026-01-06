@@ -20,8 +20,12 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Nunito, sans-serif",
-    fontFamilySecondary: "Rubik, sans-serif",
+    // fontFamily: "Nunito, sans-serif",
+    // fontFamily: "Space Grotesk, sans-serif",
+    fontFamily: "Outfit, sans-serif",
+    // fontFamily: "Chivo, sans-serif",
+    // fontFamilySecondary: "Rubik, sans-serif", 
+    fontFamilySecondary: "Inter, sans-serif",
   },
 });
 

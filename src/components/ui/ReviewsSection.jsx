@@ -19,19 +19,19 @@ const ReviewsSection = () => {
       name: "Google 5-star Review",
       logo: googleReviews,
       path: "https://g.co/kgs/tDRtyyD",
-      logoWidth: "160px",
+      logoWidth: "140px",
     },
     {
       name: "Good Firms 5-star Review",
       logo: goodFirms,
       path: "https://www.goodfirms.co/company/jawam-infotech",
-      logoWidth: "210px",
+      logoWidth: "190px",
     },
     {
       name: "Clutch 5-star Review",
       logo: clutch,
-      path: "https://www.goodfirms.co/company/jawam-infotech",
-      logoWidth: "145px",
+      path: "https://clutch.co/profile/jawam-infotech",
+      logoWidth: "125px",
     },
   ];
 
@@ -50,17 +50,17 @@ const ReviewsSection = () => {
         sx={{
           color: theme.palette.text.secondary,
           fontSize: "20px",
-          fontWeight: 800,
+          fontWeight: 600,
           fontFamily: theme.typography.fontFamily,
           textTransform: "uppercase",
         }}
       >
-        Trusted by Clients
+        Trusted by Clients 
       </Typography>
 
       <Underline
         lineWidth="140px"
-        lineHeight="4px"
+        lineHeight="3px"
         barWidth="5px"
         mtop={1.5}
         mBottom={{ xs: 6, sm: 7 }}
@@ -71,7 +71,7 @@ const ReviewsSection = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          gap: { xs: 5, sm: 6, md: 8, lg: 12, xl: 16 },
+          gap: { xs: 5, sm: 6, md: 8, lg: 12, xl: 8 },
           flexWrap: "wrap",
         }}
         data-aos="fade-up"
@@ -97,14 +97,18 @@ const ReviewsSection = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 backgroundColor: "#EEF9FF",
-                borderRadius: 2,
-                width: 250,
-                height: 135,
+                borderRadius: 1,
+                width: 280,
+                height: 155,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  boxShadow: "0px 8px 20px rgba(0,0,0,0.1)",
+                },
               }}
             >
               <Box>
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} sx={{ color: "#FFD700", fontSize: 26 }} />
+                  <StarIcon key={i} sx={{ color: "#ff9900", fontSize: 26 }} />
                 ))}
               </Box>
               <Box

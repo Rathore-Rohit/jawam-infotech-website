@@ -80,6 +80,9 @@ const services = [
   { label: "CRM Customization", path: "/services/crm-customization" },
   { label: "SEO/SMO", path: "/services/seo-smo" },
   { label: "IT Staff Augmentation", path: "/services/staff-augmentation" },
+  { label: "Artificial Intelligence", path: "/services/artificial-intelligence" },
+  { label: "Data Engineering", path: "/services/data-engineering" },
+  { label: "Digital Analytics", path: "/services/digital-analytics" }
 ];
 
 const technology = [
@@ -99,7 +102,7 @@ const technology = [
 
 const headingStyle = {
   fontFamily: theme.typography.fontFamily,
-  fontWeight: 600,
+  fontWeight: 500,
   fontSize: { xs: "22.7px", sm: "25.5px", lg: "28px" },
 };
 
@@ -154,7 +157,7 @@ const Footer = () => {
 
             <Underline
               lineWidth="90px"
-              lineHeight="2.5px"
+              lineHeight="2px"
               barWidth="5px"
               mtop={1.5}
               mBottom={{ xs: 3, sm: 3.2 }}
@@ -230,7 +233,7 @@ const Footer = () => {
 
             <Underline
               lineWidth="90px"
-              lineHeight="2.5px"
+              lineHeight="2px"
               barWidth="5px"
               mtop={1.5}
               mBottom={{ xs: 3, sm: 3.2 }}
@@ -266,7 +269,7 @@ const Footer = () => {
 
             <Underline
               lineWidth="90px"
-              lineHeight="2.5px"
+              lineHeight="2px"
               barWidth="5px"
               mtop={1.5}
               mBottom={{ xs: 3, sm: 3.2 }}
@@ -302,7 +305,7 @@ const Footer = () => {
 
             <Underline
               lineWidth="90px"
-              lineHeight="2.5px"
+              lineHeight="2px"
               barWidth="5px"
               mtop={1.5}
               mBottom={{ xs: 3, sm: 3.2 }}

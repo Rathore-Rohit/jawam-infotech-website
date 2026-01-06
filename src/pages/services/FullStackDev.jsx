@@ -17,7 +17,7 @@ const FullStackDev = () => {
       {/* Main Content */}
       <ServicesMainSection
         title="Full-stack Development"
-        heading="From frontend to backend, We're your Full-Stack dream team."
+        heading="From frontend to backend, We're your Full-Stack dream team"
         description={`In the ever-evolving world of technology, businesses need versatile solutions that adapt to their unique requirements. This is where Full-Stack Development comes into play, and at Jawam Infotech, we excel in providing end-to-end development services that encompass the entire technology stack.\n\nWe have a team of experienced and dedicated Full-Stack Developers who can seamlessly blend their expertise in both front-end and back-end technologies. Here's what sets our Full-Stack Development services apart:`}
         points={[
           "Versatility",

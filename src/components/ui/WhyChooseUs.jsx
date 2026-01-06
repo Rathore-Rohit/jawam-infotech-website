@@ -1,178 +1,239 @@
-import { Box, Grid, Typography } from "@mui/material";
-import theme from "../../theme";
+import { Box, Typography, Paper, useTheme } from "@mui/material";
+import { Award, Wrench, Gem, Rocket } from "lucide-react";
 import Underline from "../../components/ui/Underline";
-import whyChooseUs from "../../assets/whyChooseUs.png";
-import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
-import PsychologyIcon from "@mui/icons-material/Psychology";
-import GroupsIcon from "@mui/icons-material/Groups";
-import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 
-const commonTypographyStyles = {
-  color: theme.palette.custom.paragraph,
-  fontSize: "16px",
-  fontWeight: 400,
-  fontFamily: theme.typography.fontFamilySecondary,
-  lineHeight: "24px",
-  textAlign: "justify",
-  mb: 3,
-};
+const features = [
+  {
+    icon: <Award size={40} />,
+    title: "Expertise",
+    description:
+      "Our experts bring deep knowledge and insights to deliver efficient and impactful solutions for your business needs.",
+  },
+  {
+    icon: <Wrench size={40} />,
+    title: "Custom Solutions",
+    description:
+      "We build tailored solutions designed to match your exact requirements and help achieve measurable business growth.",
+  },
+  {
+    icon: <Gem size={40} />,
+    title: "Quality Assurance",
+    description:
+      "Strict testing ensures every solution meets the highest standards of quality, performance, and reliability.",
+  },
+  {
+    icon: <Rocket size={40} />,
+    title: "Timely Delivery",
+    description:
+      "We ensure all projects are delivered on time with quality, giving your business a strong competitive advantage.",
+  },
+];
 
-const titleTypographyStyles = {
-  color: theme.palette.text.secondary,
-  fontSize: { xs: "21px", sm: "22px", md: "24px" },
-  fontWeight: 700,
-  fontFamily: theme.typography.fontFamily,
-};
+import { Crown, Lightbulb, Users, Headphones } from "lucide-react";
 
-const descTypographyStyles = {
-  color: theme.palette.custom.paragraph,
-  fontSize: "16px",
-  fontWeight: 400,
-  fontFamily: theme.typography.fontFamilySecondary,
-  lineHeight: "24px",
-};
-
-const boxStyles = {
-  height: "50%",
-  display: "flex",
-  flexDirection: "column",
-  gap: 0.5,
-  mb: { xs: 1.5, md: 0 },
-};
+const features1 = [
+  {
+    icon: <Crown size={40} />,
+    title: "Best In Industry",
+    description:
+      "Setting benchmarks with top-tier industry solutions, delivering excellence that defines us as the best in business.",
+  },
+  {
+    icon: <Lightbulb size={40} />,
+    title: "Innovation Hub",
+    description:
+      "Driving progress through creative, customer-focused solutions that redefine innovation in every project we handle.",
+  },
+  {
+    icon: <Users size={40} />,
+    title: "Professional Staff",
+    description:
+      "Empowering excellence with a team of dedicated and highly professional staff committed to your lasting success.",
+  },
+  {
+    icon: <Headphones size={40} />,
+    title: "24/7 Support",
+    description:
+      "Delivering round-the-clock support to ensure your business runs smoothly without boundaries or interruptions.",
+  },
+];
 
 const WhyChooseUs = () => {
+  const theme = useTheme();
+
   return (
-    <Box
-      component="section"
-      sx={{
-        px: { xs: 3, sm: 6, lg: 14 },
-        py: 12,
-      }}
-    >
+    <>
+      {/* Why Choose Us?  */}
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          px: { lg: 18 },
+          backgroundColor: "#E5F6FD",
+          py: 8,
+          px: { xs: 3, sm: 6, lg: 8, xl: 12 },
         }}
       >
-        <Typography
-          component="h5"
+        <Box
           sx={{
-            textTransform: "uppercase",
-            color: theme.palette.text.primary,
-            fontSize: "20px",
-            fontWeight: 800,
-            fontFamily: theme.typography.fontFamily,
-            mb: 2,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          Why Choose Us ?
-        </Typography>
-        <Typography sx={commonTypographyStyles}>
-          <span style={{ fontWeight: 500 }}>Expertise</span>: At Jawam Infotech,
-          our seasoned professionals bring a wealth of expertise to every
-          project, ensuring a deep understanding of your unique challenges and
-          delivering solutions that go beyond expectations.
-        </Typography>
-        <Typography sx={commonTypographyStyles}>
-          <span style={{ fontWeight: 500 }}>Custom Solutions</span>: We
-          specialize in crafting bespoke solutions tailored to your specific
-          needs. Our commitment to customization ensures that your project is
-          not just an application but a strategic asset designed to elevate your
-          business.
-        </Typography>
-        <Typography sx={commonTypographyStyles}>
-          <span style={{ fontWeight: 500 }}>Quality Assurance</span>: Rigorous
-          testing processes and a dedicated quality assurance team guarantee
-          that your solution is not just functional, but flawless, meeting the
-          highest standards of performance and reliability.
-        </Typography>
-        <Typography sx={commonTypographyStyles}>
-          <span style={{ fontWeight: 500 }}>Timely Delivery</span>: Time is of
-          the essence, and we value yours. With our commitment to timely
-          delivery, we ensure that your project is not only completed on
-          schedule but also exceeds your expectations, providing you a
-          competitive edge in the market.
-        </Typography>
-        <Underline
-          lineWidth="140px"
-          lineHeight="4px"
-          barWidth="5px"
-          mtop={1.2}
-          mBottom={{ xs: 5, sm: 7 }}
-        />
-      </Box>
-      <Box>
-        <Grid container spacing={6}>
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Box sx={boxStyles}>
-              <MilitaryTechIcon
-                sx={{ color: theme.palette.text.primary, fontSize: 50 }}
-              />
-              <Typography component="h4" sx={titleTypographyStyles}>
-                Best In Industry
-              </Typography>
-              <Typography sx={descTypographyStyles}>
-                We are setting the standard for being Best-in-Industry
-                Solutions.
-              </Typography>
-            </Box>
-            <Box sx={boxStyles}>
-              <PsychologyIcon
-                sx={{ color: theme.palette.text.primary, fontSize: 50 }}
-              />
-              <Typography component="h4" sx={titleTypographyStyles}>
-                Innovation Hub
-              </Typography>
-              <Typography sx={descTypographyStyles}>
-                Crafting Customer-Centric Solutions in an innovative manner.
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid size={{ xs: 12, md: 4 }} data-aos="zoom-in">
-            <Box
-              component="img"
-              src={whyChooseUs}
-              alt="Image"
+          <Typography variant="h4" fontWeight="500" align="center" gutterBottom>
+            Why Choose Us?
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="center"
+            sx={{
+              mb: 2,
+              color: theme.palette.custom.paragraph,
+              fontFamily: theme.typography.fontFamilySecondary,
+            }}
+          >
+            Discover the advantages of partnering with Jawam Infotech for your
+            next project
+          </Typography>
+          <Underline
+            lineWidth="140px"
+            lineHeight="3px"
+            barWidth="5px"
+            mBottom={{ xs: 6, sm: 7 }}
+          />
+        </Box>
+
+        <Box
+          sx={{
+            display: "grid",
+            justifyContent: "center",
+            gap: 5,
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(2, 1fr)",
+              lg: "repeat(4, 1fr)",
+            },
+          }}
+        >
+          {features.map((item, idx) => (
+            <Paper
+              key={idx}
+              elevation={0}
               sx={{
-                width: { xs: "100%", sm: "670px", md: "100%" },
-                height: { xs: "auto", sm: "350px", md: "auto" },
+                px: { xs: 4, sm: 3.5, md: 4 },
+                py: 4,
+                textAlign: "center",
+                border: "1px solid transparent",
                 borderRadius: 2,
-                mt: { sm: 1.5, md: 6.5, lg: 0 },
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  borderColor: theme.palette.text.primary,
+                  boxShadow: "0 10px 25px rgba(0, 188, 212, 0.1)",
+                },
               }}
-            />
-          </Grid>
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Box sx={boxStyles}>
-              <GroupsIcon
-                sx={{ color: theme.palette.text.primary, fontSize: 50 }}
-              />
-              <Typography component="h4" sx={titleTypographyStyles}>
-                Professional Staff
+            >
+              <Box sx={{ mb: 2 }}>{item.icon}</Box>
+              <Typography variant="h6" fontWeight="500" gutterBottom>
+                {item.title}
               </Typography>
-              <Typography sx={descTypographyStyles}>
-                Empowering Excellence with a Team of Dedicated and Professional
-                Staff.
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  fontWeight: 400,
+                  color: theme.palette.custom.paragraph,
+                  fontFamily: theme.typography.fontFamilySecondary,
+                  lineHeight: "24px",
+                }}
+              >
+                {item.description}
               </Typography>
-            </Box>
-            <Box sx={boxStyles}>
-              <SupportAgentIcon
-                sx={{ color: theme.palette.text.primary, fontSize: 50 }}
-              />
-              <Typography component="h4" sx={titleTypographyStyles}>
-                24/7 Support
-              </Typography>
-              <Typography sx={descTypographyStyles}>
-                We are providing Round-the-Clock Support Your Success Knows No
-                Boundaries with Our 24/7 Commitment.
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
+            </Paper>
+          ))}
+        </Box>
       </Box>
-    </Box>
+
+      {/* Our Commitment to Excellence*/}
+      <Box sx={{ py: 8, px: { xs: 3, sm: 6, lg: 8, xl: 12 } }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography variant="h4" fontWeight="500" align="center" gutterBottom>
+            Our Commitment to Excellence
+          </Typography>
+          <Typography
+            align="center"
+            sx={{
+              mb: 2,
+              color: theme.palette.custom.paragraph,
+              fontFamily: theme.typography.fontFamilySecondary,
+            }}
+          >
+            We are dedicated to providing top-tier service and groundbreaking
+            solutions
+          </Typography>
+          <Underline
+            lineWidth="140px"
+            lineHeight="3px"
+            barWidth="5px"
+            mBottom={{ xs: 6, sm: 7 }}
+          />
+        </Box>
+
+        <Box
+          sx={{
+            display: "grid",
+            justifyContent: "center",
+            gap: 5,
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(2, 1fr)",
+              lg: "repeat(4, 1fr)",
+            },
+          }}
+        >
+          {features1.map((item, idx) => (
+            <Paper
+              key={idx}
+              elevation={0}
+              sx={{
+                px: { xs: 4, sm: 3.5, md: 4 },
+                py: 4,
+                textAlign: "center",
+                border: "1px solid transparent",
+                borderRadius: 2,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  borderColor: theme.palette.text.primary,
+                  boxShadow: "0 10px 25px rgba(0, 188, 212, 0.1)",
+                },
+              }}
+            >
+              <Box sx={{ mb: 2 }}>{item.icon}</Box>
+              <Typography variant="h6" fontWeight="500" gutterBottom>
+                {item.title}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  fontWeight: 400,
+                  color: theme.palette.custom.paragraph,
+                  fontFamily: theme.typography.fontFamilySecondary,
+                  lineHeight: "24px",
+                }}
+              >
+                {item.description}
+              </Typography>
+            </Paper>
+          ))}
+        </Box>
+      </Box>
+    </>
   );
 };
 

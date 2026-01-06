@@ -423,7 +423,7 @@ const Career = () => {
               textAlign: "center",
               fontSize: { xs: "28px", sm: "34px", md: "36px" },
               fontFamily: theme.typography.fontFamily,
-              fontWeight: 900,
+              fontWeight: 500,
               color: theme.palette.text.secondary,
               lineHeight: { xs: "36px", sm: "42px", md: "46px", lg: "48px" },
               whiteSpace: {sm: "pre-line"},
@@ -434,7 +434,7 @@ const Career = () => {
 
           <Underline
             lineWidth="140px"
-            lineHeight="4px"
+            lineHeight="3px"
             barWidth="5px"
             mBottom={{ xs: 6, sm: 4.5, md: 8 }}
           />
@@ -456,7 +456,7 @@ const Career = () => {
             data-aos="fade-up"
           >
             <Box>
-              <Typography variant="h6" fontWeight="bold">
+              <Typography variant="h6" fontWeight="400">
                 {job.title}
               </Typography>
               <Typography
@@ -476,6 +476,7 @@ const Career = () => {
                 px: 2,
                 textTransform: "capitalize",
                 fontFamily: theme.typography.fontFamily,
+                fontWeight: "400"
               }}
             >
               Apply Now
@@ -491,7 +492,7 @@ const Career = () => {
           maxWidth="sm"
           scroll="paper"
         >
-          <DialogTitle sx={{ m: 0, p: 2 }}>
+          <DialogTitle sx={{ m: 0, p: 2, fontWeight: 400 }}>
             {selectedJob?.title}
             <IconButton
               aria-label="close"
@@ -513,11 +514,11 @@ const Career = () => {
               gutterBottom
               sx={{ color: theme.palette.custom.paragraph }}
             >
-              <strong>Location:</strong> {selectedJob?.location}
+              <span style={{ fontWeight: "600" }}>Location:</span> {selectedJob?.location}
               <br />
-              <strong>Type:</strong> {selectedJob?.type}
+              <span style={{ fontWeight: "600" }}>Type:</span> {selectedJob?.type}
               <br />
-              <strong>Mode:</strong> {selectedJob?.mode}
+              <span style={{ fontWeight: "600" }}>Mode:</span> {selectedJob?.mode}
             </Typography>
 
             <Typography
@@ -525,7 +526,7 @@ const Career = () => {
               sx={{ mt: 2, color: theme.palette.custom.paragraph }}
               gutterBottom
             >
-              <strong style={{ fontSize: "16px" }}>About Us</strong> <br />
+              <span style={{ fontSize: "16px", fontWeight: "600" }}>About Us</span> <br />
               At Jawam Infotech, we deliver innovative and scalable IT solutions
               that empower business growth. As a fast-growing tech company, we
               thrive on excellence, collaboration, and creating meaningful
@@ -537,7 +538,7 @@ const Career = () => {
               sx={{ mt: 2, color: theme.palette.custom.paragraph }}
               gutterBottom
             >
-              <strong style={{ fontSize: "16px" }}>Job Description</strong>{" "}
+              <span style={{ fontSize: "16px", fontWeight: "600" }}>Job Description</span>{" "}
               <br />
               {selectedJob?.jobDescription}
             </Typography>
@@ -547,7 +548,7 @@ const Career = () => {
                 <Typography
                   sx={{
                     mt: 2,
-                    fontWeight: "bold",
+                    fontWeight: "600",
                     color: theme.palette.custom.paragraph,
                   }}
                   gutterBottom
@@ -572,7 +573,7 @@ const Career = () => {
                 <Typography
                   sx={{
                     mt: 2,
-                    fontWeight: "bold",
+                    fontWeight: "600",
                     color: theme.palette.custom.paragraph,
                   }}
                   gutterBottom
@@ -596,7 +597,7 @@ const Career = () => {
             <Typography
               sx={{
                 mt: 2,
-                fontWeight: "bold",
+                fontWeight: "600",
                 color: theme.palette.custom.paragraph,
               }}
               gutterBottom

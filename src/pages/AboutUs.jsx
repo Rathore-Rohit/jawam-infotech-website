@@ -24,27 +24,27 @@ import theme from "../theme";
 
 const ourValues = [
   {
-    heading: "1. Innovation:",
+    heading: "• Innovation:",
     description:
       "We embrace innovation in everything we do, constantly pushing the boundaries of what's possible.",
   },
   {
-    heading: "2. Excellence:",
+    heading: "• Excellence:",
     description:
       "We strive for excellence in quality, service, and execution, setting the highest standards for ourselves and our work.",
   },
   {
-    heading: "3. Integrity:",
+    heading: "• Integrity:",
     description:
       "We conduct ourselves with integrity, honesty, and transparency, earning the trust and respect of our clients, partners, and colleagues.",
   },
   {
-    heading: "4. Collaboration:",
+    heading: "• Collaboration:",
     description:
       "We believe in the power of collaboration, working closely with our clients to understand their needs and deliver tailored solutions.",
   },
   {
-    heading: "5. Continuous improvement:",
+    heading: "• Continuous improvement:",
     description:
       "We are committed to continuous improvement, always seeking new ways to enhance our skills, processes, and services.",
   },
@@ -82,7 +82,7 @@ const styles = {
   heading: {
     color: theme.palette.text.secondary,
     fontSize: { xs: "26px", sm: "28px", md: "30px" },
-    fontWeight: 800,
+    fontWeight: 500,
     fontFamily: theme.typography.fontFamily,
     mb: 1,
   },
@@ -122,7 +122,7 @@ const AboutUs = () => {
               textTransform: "uppercase",
               fontSize: "20px",
               fontFamily: theme.typography.fontFamily,
-              fontWeight: 800,
+              fontWeight: 500,
               mb: 1,
             }}
           >
@@ -130,13 +130,13 @@ const AboutUs = () => {
           </Typography>
           <Typography sx={styles.paragraph}>
             Welcome to Jawam Infotech, where innovation meets expertise to shape
-            the digital future. Established in 2023, we have quickly emerged as
+            the digital future. Established in 2024, we have quickly emerged as
             a leading software development company dedicated to empowering
             businesses with cutting-edge technology solutions.
           </Typography>
           <Underline
             lineWidth="140px"
-            lineHeight="4px"
+            lineHeight="3px"
             barWidth="5px"
             mtop={1.2}
             mBottom={{ xs: 5, sm: 5 }}
@@ -183,7 +183,7 @@ const AboutUs = () => {
                       color: theme.palette.text.secondary,
                       fontSize: { xs: "21px", sm: "23px" },
                       fontFamily: theme.typography.fontFamily,
-                      fontWeight: 700,
+                      fontWeight: 500,
                       mb: 0.5,
                     }}
                   >
@@ -214,7 +214,7 @@ const AboutUs = () => {
             sx={{
               color: theme.palette.text.secondary,
               fontSize: { xs: "26px", sm: "28px" },
-              fontWeight: 800,
+              fontWeight: 500,
               fontFamily: theme.typography.fontFamily,
               textTransform: "uppercase",
             }}
@@ -224,7 +224,7 @@ const AboutUs = () => {
 
           <Underline
             lineWidth="140px"
-            lineHeight="4px"
+            lineHeight="3px"
             barWidth="5px"
             mBottom={{ xs: 5, sm: 6 }}
           />
@@ -254,7 +254,7 @@ const AboutUs = () => {
                 alt="image"
                 sx={{ width: 120, height: 120, mb: 2 }}
               />
-              <Typography variant="h6" fontWeight={700}>
+              <Typography variant="h6" fontWeight="500">
                 Shainki Gupta
               </Typography>
               <Typography
@@ -321,7 +321,7 @@ const AboutUs = () => {
           sx={{
             color: theme.palette.text.secondary,
             fontSize: { xs: "26px", sm: "28px" },
-            fontWeight: 800,
+            fontWeight: 500,
             fontFamily: theme.typography.fontFamily,
             textTransform: "uppercase",
           }}
@@ -330,7 +330,7 @@ const AboutUs = () => {
         </Typography>
         <Underline
           lineWidth="140px"
-          lineHeight="4px"
+          lineHeight="3px"
           barWidth="5px"
           mtop={0.8}
           mBottom={{ xs: 5, sm: 4 }}
@@ -356,6 +356,7 @@ const AboutUs = () => {
             backgroundColor: "#06A3DA",
             textTransform: "capitalize",
             fontSize: "16px",
+            fontWeight: "400",
             color: "white",
             px: 2,
             py: 1,

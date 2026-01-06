@@ -61,7 +61,7 @@ const Banner = ({ title, subTitle, image, currentPage }) => {
             sx={{
               fontFamily: theme.typography.fontFamily,
               fontSize: { xs: "30px", sm: "44px", md: "51px", lg: "56px" },
-              fontWeight: { xs: 500, sm: 900 },
+              fontWeight: 500,
               lineHeight: "36px",
               mt: { xs: 2, md: 4 },
             }}
@@ -87,7 +87,7 @@ const Banner = ({ title, subTitle, image, currentPage }) => {
               to="/"
               underline="none"
               sx={{
-                fontWeight: 500,
+                fontWeight: 400,
                 color: "#fff",
                 WebkitTapHighlightColor: "transparent",
                 "&:hover": { color: "#ddd", backgroundColor: "transparent" },
@@ -108,7 +108,7 @@ const Banner = ({ title, subTitle, image, currentPage }) => {
               to={`/${currentPage?.toLowerCase() || ""}`}
               underline="none"
               sx={{
-                fontWeight: 500,
+                fontWeight: 400,
                 color: "#fff",
                 WebkitTapHighlightColor: "transparent",
                 "&:hover": { color: "#ddd", backgroundColor: "transparent" },
@@ -134,7 +134,7 @@ const Banner = ({ title, subTitle, image, currentPage }) => {
                 lg: "32px",
               },
               fontFamily: theme.typography.fontFamily,
-              fontWeight: { xs: 500, sm: 900 },
+              fontWeight: 500,
             }}
           >
             {subTitle}

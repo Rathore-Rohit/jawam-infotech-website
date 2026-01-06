@@ -17,8 +17,8 @@ const IndustriesMainSection = ({ heading, cardData }) => {
         sx={{
           color: theme.palette.text.primary,
           fontFamily: theme.typography.fontFamily,
-          fontSize: { xs: "25px", md: "27px" },
-          fontWeight: 800,
+          fontSize: { xs: "25px", md: "28px" },
+          fontWeight: 500,
           textTransform: "uppercase",
         }}
         gutterBottom
@@ -65,7 +65,7 @@ const IndustriesMainSection = ({ heading, cardData }) => {
                 sx={{
                   color: theme.palette.text.primary,
                   fontSize: "16px",
-                  fontWeight: 600,
+                  fontWeight: 500,
                   fontFamily: theme.typography.fontFamily,
                   lineHeight: "21px",
                 }}

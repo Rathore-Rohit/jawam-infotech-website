@@ -7,6 +7,7 @@ const TechnologiesMainSection = ({ heading, technologies }) => {
       <Typography
         sx={{
           textAlign: "center",
+          
           fontSize: { xs: "28px", sm: "34px", md: "36px", lg: "38px" },
           fontFamily: theme.typography.fontFamily,
           fontWeight: 900,

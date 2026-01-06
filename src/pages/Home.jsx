@@ -67,12 +67,15 @@ import FullStackDev from "../assets/fullstackHome.png";
 import MobAppDev from "../assets/mobAppDevHome.png";
 import CustomSoftSol from "../assets/customSoftwareHome.png";
 import UIUX from "../assets/uiuxHome.png";
-import QATesting from "../assets/qaHome.png";
+import QA from "../assets/qaHome.png";
 import DevOpsCloud from "../assets/devopsCloudHome.png";
 import TPI from "../assets/tpiHome.png";
 import CRM from "../assets/crmHome.png";
 import SEO from "../assets/seoHome.png";
 import StaffAugmentation from "../assets/staffAug.png";
+import AI from "../assets/artificialIn.png"; 
+import DigitalAnalytics from "../assets/digitalAnalytics.png"; 
+import DataEngineering from "../assets/dataEngineering.png";
 const ourServices = [
   {
     src: SoftDev,
@@ -112,8 +115,8 @@ const ourServices = [
     link: "/services/ui-ux-design",
   },
   {
-    src: QATesting,
-    heading: "QA and Testing",
+    src: QA,
+    heading: "Quality Assurance",
     content: "Delivering flawless software with expert QA and Testing.",
     link: "/services/qa-testing",
   },
@@ -151,6 +154,27 @@ const ourServices = [
     content:
       "Providing skilled developers to extend your team with speed and precision.",
     link: "/services/staff-augmentation",
+  },
+  {
+    src: AI,
+    heading: "Artificial Intelligence",
+    content:
+      "Powering smarter solutions with AI-driven innovation.",
+    link: "/services/artificial-intelligence",
+  },
+  {
+    src: DataEngineering,
+    heading: "Data Engineering",
+    content:
+      "Enabling data-driven systems with scalable engineering excellence.",
+    link: "/services/data-engineering",
+  },
+  {
+    src: DigitalAnalytics,
+    heading: "Digital Analytics",
+    content:
+      "Unlocking business insights with powerful digital analytics.",
+    link: "/services/digital-analytics",
   },
 ];
 
@@ -203,14 +227,14 @@ const styles = {
   heading: {
     color: theme.palette.text.primary,
     fontSize: "20px",
-    fontWeight: 800,
+    fontWeight: 600,
     fontFamily: theme.typography.fontFamily,
     textTransform: "uppercase",
   },
   subHeading: {
     color: theme.palette.text.secondary,
     fontSize: { xs: "28px", sm: "34px", md: "36px", lg: "38px" },
-    fontWeight: 900,
+    fontWeight: 500,
     fontFamily: theme.typography.fontFamily,
     lineHeight: { xs: "36px", sm: "42px", md: "46px", lg: "48px" },
     textAlign: "center",
@@ -352,7 +376,7 @@ const Home = () => {
                 mt: 1.8,
                 fontSize: { xs: "30px", sm: "62.5px", md: "72px", lg: "80px" },
                 fontFamily: theme.typography.fontFamily,
-                fontWeight: { xs: 500, sm: 900 },
+                fontWeight: { xs: 500, sm: 600 },
                 lineHeight: {
                   xs: "36px",
                   sm: "72.5px",
@@ -383,7 +407,7 @@ const Home = () => {
 
           <Underline
             lineWidth="140px"
-            lineHeight="4px"
+            lineHeight="3px"
             barWidth="5px"
             mBottom={{ xs: 3, sm: 4.5 }}
           />
@@ -464,7 +488,7 @@ const Home = () => {
                         sx={{
                           color: theme.palette.text.secondary,
                           fontSize: { xs: "22px", md: "23px", lg: "24px" },
-                          fontWeight: 700,
+                          fontWeight: 500,
                           fontFamily: theme.typography.fontFamily,
                           textAlign: "center",
                         }}
@@ -518,7 +542,7 @@ const Home = () => {
 
           <Underline
             lineWidth="140px"
-            lineHeight="4px"
+            lineHeight="3px"
             barWidth="5px"
             mBottom={{ xs: 6, sm: 7 }}
           />
@@ -566,7 +590,7 @@ const Home = () => {
                   sx={{
                     color: theme.palette.text.secondary,
                     fontSize: { xs: "22px", md: "23px", lg: "24px" },
-                    fontWeight: 700,
+                    fontWeight: 500,
                     fontFamily: theme.typography.fontFamily,
                     textAlign: "center",
                   }}
@@ -618,7 +642,7 @@ const Home = () => {
 
           <Underline
             lineWidth="140px"
-            lineHeight="4px"
+            lineHeight="3px"
             barWidth="5px"
             mBottom={{ xs: 6, sm: 7 }}
           />
@@ -642,7 +666,7 @@ const Home = () => {
 
           <Underline
             lineWidth="140px"
-            lineHeight="4px"
+            lineHeight="3px"
             barWidth="5px"
             mtop={0}
             mBottom={{ xs: 6, sm: 7 }}
@@ -722,7 +746,7 @@ const Home = () => {
                       justifyContent="center"
                       mt={2}
                     >
-                      <Typography fontWeight="bold">
+                      <Typography sx={{ fontWeight: 500, fontSize: "18px" }}>
                         {testimonial.name}
                       </Typography>
                       <Typography

@@ -17,7 +17,7 @@ const MobileAppDev = () => {
       {/* Main Content */}
       <ServicesMainSection
         title="Mobile App Development"
-        heading="Crafting User-Centric mobile experiences with precision."
+        heading="Crafting User-Centric mobile experiences with precision"
         description="In a world where mobile devices have become an integral part of our daily lives, having a strong mobile presence is essential for businesses looking to engage their audience and stay competitive. At Jawam Infotech, we specialize in creating custom mobile applications that deliver exceptional user experiences and drive business growth. Here's what sets our mobile app development services apart:"
         points={[
           "Customized Solutions",

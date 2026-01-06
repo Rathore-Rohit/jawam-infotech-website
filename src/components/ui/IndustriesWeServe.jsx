@@ -192,7 +192,7 @@ const styles = {
   heading: {
     color: theme.palette.text.secondary,
     fontSize: "20px",
-    fontWeight: 800,
+    fontWeight: 600,
     fontFamily: theme.typography.fontFamily,
     textTransform: "uppercase",
   },
@@ -219,7 +219,7 @@ const IndustriesSection = () => {
 
         <Underline
           lineWidth="140px"
-          lineHeight="4px"
+          lineHeight="3px"
           barWidth="5px"
           mBottom={{ xs: 6, sm: 7 }}
         />
@@ -282,7 +282,7 @@ const IndustriesSection = () => {
                   />
                   <Box sx={{ position: "absolute", zIndex: 2 }}>
                     {item.icon}
-                    <Typography variant="subtitle1" fontWeight="600">
+                    <Typography variant="subtitle1" fontWeight="500">
                       {item.label}
                     </Typography>
                   </Box>
@@ -328,7 +328,7 @@ const IndustriesSection = () => {
                   <Overlay />
                   <Box sx={{ position: "absolute", zIndex: 2 }}>
                     {item.icon}
-                    <Typography variant="subtitle1" fontWeight="600">
+                    <Typography variant="subtitle1" fontWeight="500">
                       {item.label}
                     </Typography>
                   </Box>

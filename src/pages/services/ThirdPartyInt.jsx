@@ -17,7 +17,7 @@ const ThirdPartyInt = () => {
       {/* Main Content */}
       <ServicesMainSection
         title="Third-Party Integration"
-        heading="Our Ecosystem, Our Integration: Making it all work together."
+        heading="Our Ecosystem, Our Integration: Making it all work together"
         description={`In today's interconnected digital world, the ability to seamlessly integrate third-party services and tools into your applications can significantly enhance functionality, extend capabilities, and improve the overall user experience. At Jawam Infotech, we specialize in Third-Party Integration services that empower businesses to harness the full potential of external solutions.\n\nWe understand the importance of strategic Third-Party Integration. Our approach to Third-Party Integration is designed to be efficient, secure, and tailored to your business needs. Here’s what sets our Third-Party Integration services apart:`}
         points={[
           "Customized Solutions",

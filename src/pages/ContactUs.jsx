@@ -124,7 +124,7 @@ const ContactUs = () => {
           <Typography
             sx={{
               fontFamily: theme.typography.fontFamily,
-              fontSize: "20px",
+              fontSize: "22px",
               color: theme.palette.text.secondary,
             }}
           >
@@ -132,7 +132,7 @@ const ContactUs = () => {
           </Typography>
           <Underline
             lineWidth="140px"
-            lineHeight="4px"
+            lineHeight="3px"
             barWidth="5px"
             mtop={1}
             mBottom={{ xs: 6, sm: 8 }}
@@ -269,6 +269,7 @@ const ContactUs = () => {
                   color: theme.palette.custom.white,
                   p: 2,
                   borderRadius: "2px",
+                  fontSize: "15px"
                 }}
               >
                 Submit
@@ -307,7 +308,7 @@ const ContactUs = () => {
                     sx={{
                       fontSize: "20px",
                       fontFamily: theme.typography.fontFamily,
-                      fontWeight: 500,
+                      fontWeight: 400,
                       color: theme.palette.text.secondary,
                       mb: 0.5,
                     }}
@@ -318,7 +319,7 @@ const ContactUs = () => {
                     sx={{
                       color: theme.palette.text.primary,
                       fontSize: "20px",
-                      fontWeight: 500,
+                      fontWeight: 400,
                       fontFamily: theme.typography.fontFamily,
                       lineHeight: 1.2,
                     }}
@@ -340,7 +341,7 @@ const ContactUs = () => {
                     sx={{
                       fontSize: "20px",
                       fontFamily: theme.typography.fontFamily,
-                      fontWeight: 500,
+                      fontWeight: 400,
                       color: theme.palette.text.secondary,
                       mb: 0.5,
                     }}
@@ -352,7 +353,7 @@ const ContactUs = () => {
                     sx={{
                       fontSize: "20px",
                       fontFamily: theme.typography.fontFamily,
-                      fontWeight: 500,
+                      fontWeight: 400,
                       color: theme.palette.text.secondary,
                     }}
                   >
@@ -364,7 +365,7 @@ const ContactUs = () => {
                       <span
                         style={{
                           color: theme.palette.text.primary,
-                          fontWeight: 500,
+                          fontWeight: 400,
                         }}
                       >
                         +91 99814 67849
@@ -376,7 +377,7 @@ const ContactUs = () => {
                     sx={{
                       fontSize: "20px",
                       fontFamily: theme.typography.fontFamily,
-                      fontWeight: 500,
+                      fontWeight: 400,
                       color: theme.palette.text.secondary,
                     }}
                   >
@@ -388,7 +389,7 @@ const ContactUs = () => {
                       <span
                         style={{
                           color: theme.palette.text.primary,
-                          fontWeight: 500,
+                          fontWeight: 400,
                           wordBreak: "break-word",
                           lineHeight: 1.2,
                         }}
@@ -410,7 +411,7 @@ const ContactUs = () => {
                     sx={{
                       fontSize: "20px",
                       fontFamily: theme.typography.fontFamily,
-                      fontWeight: 500,
+                      fontWeight: 400,
                       color: theme.palette.text.secondary,
                       mb: 0.5,
                     }}
@@ -421,7 +422,7 @@ const ContactUs = () => {
                     sx={{
                       fontSize: "20px",
                       fontFamily: theme.typography.fontFamily,
-                      fontWeight: 500,
+                      fontWeight: 400,
                       color: theme.palette.text.primary,
                       wordBreak: "break-word",
                       lineHeight: 1.2,

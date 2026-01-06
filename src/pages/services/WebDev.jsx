@@ -17,7 +17,7 @@ const WebDev = () => {
       {/* Main Content */}
       <ServicesMainSection
         title="Web Development"
-        heading="Web Development Wizards: Bringing your digital dreams to life."
+        heading="Web Development Wizards: Bringing your digital dreams to life"
         description={`We understand that the online presence of your business is crucial in today's digital age. A well-designed and user-friendly website can make all the difference in attracting and retaining customers.\n\nOur web development services are designed to create highly functional and aesthetically pleasing websites that cater to your unique business needs. We believe in a holistic approach to web development, combining cutting-edge technology, creative design, and a focus on user experience by following approaches like:`}
         points={[
           "Custom Solutions",

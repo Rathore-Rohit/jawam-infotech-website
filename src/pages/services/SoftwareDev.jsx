@@ -17,7 +17,7 @@ const SoftwareDev = () => {
       {/* Main Content */}
       <ServicesMainSection
         title="Software Development"
-        heading="We are turning visions into reality through expert software craftsmanship."
+        heading="We are turning visions into reality through expert software craftsmanship"
         description="We are passionate about Us turning innovative ideas into robust, scalable, and high-performance software solutions. Our software development services are at the core of what we do, and we take pride in our ability to craft cutting-edge applications that drive your business forward. We follow the approach"
         points={[
           "Understanding Your Vision",

@@ -30,6 +30,9 @@ import MobAppDevelopment from "../pages/technologies/MobAppDevelopment";
 import Devops from "../pages/technologies/Devops";
 import Loader from "../components/common/Loader";
 import StaffAugmentation from "../pages/services/StaffAugmentation";
+import ArtificialIntelligence from "../pages/services/ArtificialIntelligence";
+import DataEngineering from "../pages/services/DataEngineering";
+import DigitalAnalytics from "../pages/services/DigitalAnalytics";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -66,6 +69,9 @@ const AppRoutes = () => {
           <Route path="/services/crm-customization" element={<CrmCustomization />} />
           <Route path="/services/seo-smo" element={<SeoSmo />} />
           <Route path="/services/staff-augmentation" element={<StaffAugmentation />} />
+          <Route path="/services/artificial-intelligence" element={<ArtificialIntelligence />} />
+          <Route path="/services/data-engineering" element={<DataEngineering />} />
+          <Route path="/services/digital-analytics" element={<DigitalAnalytics />} />
 
           {/* Industries */}
           <Route path="/industries/healthcare" element={<Healthcare />} />

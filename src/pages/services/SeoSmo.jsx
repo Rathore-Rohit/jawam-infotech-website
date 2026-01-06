@@ -17,7 +17,7 @@ const SeoSmo = () => {
       {/* Main Content */}
       <ServicesMainSection
         title="SEO/SMO"
-        heading="Boosting your online presence with SEO/SMO excellence."
+        heading="Boosting your online presence with SEO/SMO excellence"
         description={`In the digital age, having a well-optimized online presence is vital for businesses looking to succeed in a competitive landscape. At Jawam Infotech, we specialize in Search Engine Optimization (SEO) and Social Media Optimization (SMO) services that drive organic traffic, improve search engine rankings, and enhance social engagement.\n\nOur SEO and SMO services are designed to be strategic, data-driven, and tailored to your specific business objectives. Here's what sets our SEO and SMO services apart:`}
         points={[
           "Comprehensive SEO Analysis",
