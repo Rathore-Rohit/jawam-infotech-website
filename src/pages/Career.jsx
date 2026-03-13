@@ -20,28 +20,48 @@ import {
   Alert,
   IconButton,
   TextField,
+  Autocomplete
 } from "@mui/material";
 
 const textFieldStyle = {
-  "& .MuiFilledInput-root": {
-    backgroundColor: "#EEF9FF",
-    "&:hover": {
-      backgroundColor: "#EEF9FF",
+  "& .MuiOutlinedInput-root": {
+    borderRadius: "8px",
+    backgroundColor: "#fff", // white background
+    "& fieldset": {
+      borderColor: "#E0E0E0", // normal border
     },
-    "&.Mui-focused": {
-      backgroundColor: "#EEF9FF",
+    "&:hover fieldset": {
+      borderColor: "#83d1ed", // hover blue
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#83d1ed", // focus blue
+      borderWidth: "1px",
     },
   },
-  "& .MuiFormLabel-root": {
-    color: "#6B6A75",
+  "& .MuiInputLabel-root": {
+    color: "#6B6A75", // label color
   },
-  "& .MuiFormLabel-root.Mui-focused": {
-    color: "#83d1ed",
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: "#83d1ed", // floating label color
   },
-  "& .MuiFilledInput-underline:after": {
-    borderBottomColor: "#83d1ed",
+  "& .MuiFormLabel-asterisk": {
+    display: "none",
   },
 };
+
+const experienceOptions = [
+  "Fresher",
+  "1 Year",
+  "2 Years",
+  "3 Years",
+  "4 Years",
+  "5 Years",
+  "6 Years",
+  "7 Years",
+  "8 Years",
+  "9 Years",
+  "10 Years",
+];
 
 const jobData = [
   {
@@ -293,8 +313,8 @@ const jobData = [
     skillsQualifications: [
       "2–4 years of experience in AI/ML development or related fields.",
       "Strong proficiency in Python and ML libraries such as Scikit-learn, TensorFlow, PyTorch.",
-     	"Experience with NLP libraries like Hugging Face Transformers, spaCy, NLTK.",
- 	    "Familiarity with LLM-based services and architectures.",
+      "Experience with NLP libraries like Hugging Face Transformers, spaCy, NLTK.",
+      "Familiarity with LLM-based services and architectures.",
       "Good understanding of data preprocessing, feature engineering, and model evaluation.",
       "Experience with containerization tools like Docker.",
       "Experience with vector databases and retrieval systems like FAISS or Pinecone.",
@@ -317,22 +337,22 @@ const jobData = [
       "Develop intuitive front-end interfaces using HTML, CSS, JavaScript, and modern JS frameworks (React.js preferred).",
       "Work with databases (SQL/NoSQL) to store, retrieve, and process data efficiently.",
       "Ensure seamless integration between front-end and back-end components.",
-  	  "Deploy applications using Docker, CI/CD pipelines, and cloud platforms.",
-    	"Debug, test, and maintain code for high performance and scalability.",
-    	"Collaborate with UI/UX designers and other developers for end-to-end delivery.",
+      "Deploy applications using Docker, CI/CD pipelines, and cloud platforms.",
+      "Debug, test, and maintain code for high performance and scalability.",
+      "Collaborate with UI/UX designers and other developers for end-to-end delivery.",
     ],
     skillsQualifications: [
       "1–5 years of hands-on experience in Python web development using Flask or FastAPI.",
-    	"Strong knowledge of front-end technologies like HTML5, CSS3, JavaScript (React.js, Vue.js, or similar).",
- 	    "Experience with relational and/or NoSQL databases (e.g., PostgreSQL, MySQL, MongoDB).",
+      "Strong knowledge of front-end technologies like HTML5, CSS3, JavaScript (React.js, Vue.js, or similar).",
+      "Experience with relational and/or NoSQL databases (e.g., PostgreSQL, MySQL, MongoDB).",
       "Experience with Docker, CI/CD, or container-based deployments.",
       "Knowledge of cloud services (AWS, GCP, or Azure).",
-    	"Understanding of authentication (OAuth2, JWT) and API security.",
-    	"Exposure to testing frameworks like PyTest, Postman, or Swagger.",
-    	"Familiarity with agile development processes and tools like JIRA or Trello.",
- 	    "Familiarity with RESTful API design principles and integration.",
- 	    "Working knowledge of version control tools like Git.",
- 	    "Basic understanding of security best practices and performance optimization.",
+      "Understanding of authentication (OAuth2, JWT) and API security.",
+      "Exposure to testing frameworks like PyTest, Postman, or Swagger.",
+      "Familiarity with agile development processes and tools like JIRA or Trello.",
+      "Familiarity with RESTful API design principles and integration.",
+      "Working knowledge of version control tools like Git.",
+      "Basic understanding of security best practices and performance optimization.",
       "Good communication skills and ability to work in cross-functional teams.",
     ],
   },
@@ -344,6 +364,7 @@ const Career = () => {
 
   const [openDialog, setOpenDialog] = React.useState(false);
   const [selectedJob, setSelectedJob] = React.useState(null);
+  const [experience, setExperience] = React.useState("");
 
   const handleOpen = (job) => {
     setSelectedJob(job);
@@ -353,6 +374,7 @@ const Career = () => {
   const handleClose = () => {
     setOpenDialog(false);
     setSelectedJob(null);
+    setExperience("");
   };
 
   const [alert, setAlert] = React.useState(null);
@@ -361,6 +383,9 @@ const Career = () => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
+
+    // Autocomplete field manually add
+    formData.append("total_experience", experience);
 
     try {
       const res = await fetch(
@@ -377,6 +402,7 @@ const Career = () => {
       if (res.ok) {
         setAlert({ type: "success", message: "Form submitted successfully!" });
         e.target.reset();
+        setExperience("");
       } else {
         throw new Error("Submission failed.");
       }
@@ -426,7 +452,7 @@ const Career = () => {
               fontWeight: 500,
               color: theme.palette.text.secondary,
               lineHeight: { xs: "36px", sm: "42px", md: "46px", lg: "48px" },
-              whiteSpace: {sm: "pre-line"},
+              whiteSpace: { sm: "pre-line" },
             }}
           >
             {`Find Your Perfect Role and\nGrow with Us`}
@@ -634,7 +660,7 @@ const Career = () => {
                 type="text"
                 name="name"
                 label="Full Name"
-                variant="filled"
+                variant="outlined"
                 required
                 sx={{
                   ...textFieldStyle,
@@ -647,7 +673,7 @@ const Career = () => {
                 type="email"
                 name="email"
                 label="Email Id"
-                variant="filled"
+                variant="outlined"
                 required
                 sx={{
                   ...textFieldStyle,
@@ -660,7 +686,7 @@ const Career = () => {
                 type="tel"
                 name="phone"
                 label="Mobile Number"
-                variant="filled"
+                variant="outlined"
                 required
                 inputProps={{
                   maxLength: 10,
@@ -675,12 +701,44 @@ const Career = () => {
                 }}
               />
 
+              {/* Current Employer Field */}
+              <TextField
+                type="text"
+                name="current_employer"
+                label="Current Employer"
+                variant="outlined"
+                sx={{
+                  ...textFieldStyle,
+                  "& .MuiFormLabel-asterisk": { display: "none" },
+                }}
+              />
+
+              {/* Total Experience Dropdown */}
+              <Autocomplete
+                options={experienceOptions}
+                value={experience}
+                onChange={(e, value) => setExperience(value)}
+                onInputChange={(e, value) => setExperience(value)}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label="Total Experience"
+                    variant="outlined"
+                    required
+                    sx={{
+                      ...textFieldStyle,
+                      "& .MuiFormLabel-asterisk": { display: "none" },
+                    }}
+                  />
+                )}
+              />
+
               {/* Hidden Inputs */}
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
 
               {/* Resume Upload Field */}
-              <FormControl variant="filled" required>
+              <FormControl variant="outlined" required>
                 <FormLabel
                   sx={{
                     mb: 1,
@@ -702,10 +760,10 @@ const Career = () => {
                   accept=".pdf,.doc,.docx"
                   required
                   sx={{
-                    backgroundColor: "#EEF9FF",
+                    backgroundColor: "#fff",
                     padding: "14px",
-                    borderBottom: "1px solid rgba(0, 0, 0, 0.42)",
-                    borderRadius: "4px 4px 0px 0px",
+                    border: "1px solid #E0E0E0",
+                    borderRadius: "8px",
                     fontSize: "16px",
                     fontFamily: theme.typography.fontFamily,
                     cursor: "pointer",
@@ -731,7 +789,7 @@ const Career = () => {
                   backgroundColor: theme.palette.text.primary,
                   color: theme.palette.custom.white,
                   p: 2,
-                  borderRadius: "2px",
+                  borderRadius: "8px",
                 }}
               >
                 Submit

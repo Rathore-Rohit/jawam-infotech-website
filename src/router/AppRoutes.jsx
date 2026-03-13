@@ -33,6 +33,13 @@ import StaffAugmentation from "../pages/services/StaffAugmentation";
 import ArtificialIntelligence from "../pages/services/ArtificialIntelligence";
 import DataEngineering from "../pages/services/DataEngineering";
 import DigitalAnalytics from "../pages/services/DigitalAnalytics";
+import WorkWithUs from "../pages/workWithUs/WorkWithUs";
+import ProjectInquiry from "../pages/workWithUs/ProjectInquiry";
+import PotentialPartner from "../pages/workWithUs/PotentialPartner";
+import VendorForm from "../pages/workWithUs/VendorForm";
+import Blogs from "../pages/Blogs/BlogsHome";
+import BlogDetail from "../pages/Blogs/BlogDetail";
+import { WandSparkles } from "lucide-react";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -46,15 +53,18 @@ const AppRoutes = () => {
 
   return (
     <>
-      {loading && <Loader />}  
-      
+      {loading && <Loader />}
+
       <Routes>
+        {/* All Pages With Layout */}
         <Route path="/" element={<Layout />}>
           {/* Main Pages */}
           <Route path="" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/careers" element={<Career />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/work-with-us" element={<WorkWithUs />} />
 
           {/* Services */}
           <Route path="/services/software-development" element={<SoftwareDev />} />
@@ -89,6 +99,12 @@ const AppRoutes = () => {
           <Route path="/technologies/mobile-app-development" element={<MobAppDevelopment />} />
           <Route path="/technologies/devops" element={<Devops />} />
         </Route>
+
+        {/* Page WITHOUT Layout */}
+        <Route path="/project-inquiry" element={<ProjectInquiry />} />
+        <Route path="/potential-partner" element={<PotentialPartner />} />
+        <Route path="/vendor-form" element={<VendorForm />} />
+        <Route path="/blogs/:slug" element={<BlogDetail />} />
       </Routes>
     </>
   );

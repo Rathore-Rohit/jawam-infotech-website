@@ -295,47 +295,55 @@ const IndustriesSection = () => {
         // ... (desktop layout)
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "row",
-            gap: {xs: 3, xl: 4},
-            justifyContent: "center",
+            maxWidth: "1500px",        // MUST be > 1428px
+            mx: "auto",                // center section
+            px: { lg: 3, xl: 4 },      // left/right padding
           }}
         >
-          {desktopData.map((column, colIndex) => (
-            <Box
-              key={colIndex}
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: {xs: 3, xl: 4},
-              }}
-            >
-              {column.map((item, i) => (
-                <Box
-                  key={i}
-                  onClick={() => handleClick(item.path)}
-                  sx={{
-                    ...cardStyles(item),
-                    width: {xs: 240, xl: 260},
-                    mt: { lg: item.tall ? 2.5 : 0 },
-                    cursor: "pointer",
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "scale(1.05)",
-                    },
-                  }}
-                >
-                  <Overlay />
-                  <Box sx={{ position: "absolute", zIndex: 2 }}>
-                    {item.icon}
-                    <Typography variant="subtitle1" fontWeight="500">
-                      {item.label}
-                    </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              gap: { xs: 3, xl: 4 },
+              justifyContent: "center",
+            }}
+          >
+            {desktopData.map((column, colIndex) => (
+              <Box
+                key={colIndex}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: { xs: 3, xl: 4 },
+                }}
+              >
+                {column.map((item, i) => (
+                  <Box
+                    key={i}
+                    onClick={() => handleClick(item.path)}
+                    sx={{
+                      ...cardStyles(item),
+                      width: { xs: 220, xl: 240 }, // ✅ unchanged
+                      mt: { lg: item.tall ? 2.5 : 0 },
+                      cursor: "pointer",
+                      transition: "transform 0.25s ease",
+                      "&:hover": {
+                        transform: "scale(1.03)", // safe hover
+                      },
+                    }}
+                  >
+                    <Overlay />
+                    <Box sx={{ position: "absolute", zIndex: 2 }}>
+                      {item.icon}
+                      <Typography variant="subtitle1" fontWeight="500">
+                        {item.label}
+                      </Typography>
+                    </Box>
                   </Box>
-                </Box>
-              ))}
-            </Box>
-          ))}
+                ))}
+              </Box>
+            ))}
+          </Box>
         </Box>
       )}
     </Box>

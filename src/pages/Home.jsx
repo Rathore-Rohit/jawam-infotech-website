@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   Box,
   Container,
@@ -13,10 +12,18 @@ import theme from "../theme";
 import Underline from "../components/ui/Underline";
 import EastIcon from "@mui/icons-material/East";
 import { useTheme, useMediaQuery } from "@mui/material";
-
+import { useRef, useState, useEffect } from "react";
 // For Animation
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
+
 
 // Swiper Imports for Carousel
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -62,118 +69,148 @@ const ourTechnologies = [
 
 // Our Services
 import SoftDev from "../assets/softwareDevHome.png";
+import SoftDeveloper from "../assets/bannerSwDevelopment.webp";
 import WebDev from "../assets/webDevHome.png";
+import WebDeveloper from "../assets/bannerWebDev.webp";
 import FullStackDev from "../assets/fullstackHome.png";
+import fullStackDeveloper from "../assets/bannerFullStack.webp";
 import MobAppDev from "../assets/mobAppDevHome.png";
+import MobDeveloper from "../assets/bannerMobapp.webp";
 import CustomSoftSol from "../assets/customSoftwareHome.png";
+import CustomSoft from "../assets/customSwSol1.webp";
 import UIUX from "../assets/uiuxHome.png";
+import UIdesign from "../assets/bannerUiUx.webp";
 import QA from "../assets/qaHome.png";
+import QualityAssurance from "../assets/bannerQaTesting.webp";
 import DevOpsCloud from "../assets/devopsCloudHome.png";
+import Devopscloud from "../assets/bannerDevopsCloud.webp";
 import TPI from "../assets/tpiHome.png";
+import Thirdparty from "../assets/bannerTpi.webp";
 import CRM from "../assets/crmHome.png";
+import CRMM from "../assets/bannercrm.webp";
 import SEO from "../assets/seoHome.png";
+import SEOO from "../assets/seosmo1.webp";
 import StaffAugmentation from "../assets/staffAug.png";
-import AI from "../assets/artificialIn.png"; 
-import DigitalAnalytics from "../assets/digitalAnalytics.png"; 
+import Staff from "../assets/bannerStaffAug.webp";
+import AI from "../assets/artificialIn.png";
+import ArtificialIntelligence from "../assets/bannerAI.webp";
+import DigitalAnalytics from "../assets/digitalAnalytics.png";
+import DigiAnaltics from "../assets/bannerDigitalAnlytics.webp";
 import DataEngineering from "../assets/dataEngineering.png";
+import DataEng from "../assets/bannerDataEng.webp";
 const ourServices = [
   {
     src: SoftDev,
+    srcc: SoftDeveloper,
     heading: "Software Development",
-    content: "Where Innovation Meets Code: Your Software Development partner.",
+    content: "We build fast, secure, and scalable software solutions.Custom development tailored to your business needs.Reliable, modern, and performance-driven applications",
     link: "/services/software-development",
   },
   {
     src: WebDev,
+    srcc: WebDeveloper,
     heading: "Web Development",
-    content: "Designing, coding, and delivering excellence in Web Development.",
+    content: "We design fast, responsive, and modern websites.Custom web solutions tailored to your business goals.Secure, user-friendly, and performance-driven platforms.",
     link: "/services/web-development",
   },
   {
     src: FullStackDev,
+    srcc: fullStackDeveloper,
     heading: "Full Stack Development",
     content:
-      "End-to-End Excellence: Unleashing Full Stack Development potential.",
+      "We build complete, scalable full stack solutions.Front-end and back-end tailored to your needs.Secure, high-performance, and fully integrated systems.",
     link: "/services/full-stack-development",
   },
   {
     src: MobAppDev,
+    srcc: MobDeveloper,
     heading: "Mobile App Development",
-    content: "From Concept To App Store: Your mobile success partner.",
+    content: "Smart mobile solutions for modern business growth.Fast, secure, and user-friendly mobile applications.High-performance apps built for Android and iOS",
     link: "/services/mobile-app-development",
   },
   {
     src: CustomSoftSol,
+    srcc: CustomSoft,
     heading: "Custom Software Solutions",
-    content: "Tailoring Technology To Your Needs: Custom Software at its best.",
+    content: "Tailored software solutions designed for business growth.Custom-built systems to match your unique needs.Secure, scalable, and high-performance digital solutions.",
     link: "/services/custom-software-solutions",
   },
   {
     src: UIUX,
+    srcc: UIdesign,
     heading: "UI/UX Design",
-    content: "Designing intuitive user journeys with creative precision.",
+    content: "Creative UI/UX designs focused on user experience.Intuitive, modern, and visually engaging interface designs.Designs crafted to improve usability and user satisfaction.",
     link: "/services/ui-ux-design",
   },
   {
     src: QA,
+    srcc: QualityAssurance,
     heading: "Quality Assurance",
-    content: "Delivering flawless software with expert QA and Testing.",
+    content: "Ensuring high-quality software through rigorous testing.Bug-free, reliable, and performance-optimized digital products.Quality checks designed to improve stability and reliability.",
     link: "/services/qa-testing",
   },
   {
     src: DevOpsCloud,
+    srcc: Devopscloud,
     heading: "DevOps and Cloud",
     content:
-      "Where Development Meets Operations In The Cloud: Our expertise delivers.",
+      "Streamlined DevOps and cloud solutions for scalability.Automated deployment, monitoring, and infrastructure management.Secure, reliable, and high-performance cloud environments.",
     link: "/services/devops-cloud",
   },
   {
     src: TPI,
+    srcc: Thirdparty,
     heading: "Third party Integration",
     content:
-      "Seamlessly Connecting The Dots: Third-Party Integration expertise.",
+      "Seamless third-party integration for your business systems.Connect APIs and services for smooth functionality.Reliable, secure, and fully compatible integration solutions.",
     link: "/services/third-party-integration",
   },
   {
     src: CRM,
+    srcc: CRMM,
     heading: "CRM Customization",
     content:
-      "Turning CRM Data into actionable insights with customization brilliance.",
+      "Tailored CRM customization for your business needs.Optimize workflows and manage customer interactions efficiently.Secure, scalable, and fully personalized CRM solutions.",
     link: "/services/crm-customization",
   },
   {
     src: SEO,
+    srcc: SEOO,
     heading: "SEO/SMO",
     content:
-      "Transforming clicks into connections with SEO and SMO excellence.",
+      "Effective SEO and SMO strategies to boost visibility.Drivetraffic, engagement, and higher search engine rankings.Optimize online presence for measurable business growth.",
     link: "/services/seo-smo",
   },
   {
     src: StaffAugmentation,
+    srcc: Staff,
     heading: "IT Staff Augmentation",
     content:
-      "Providing skilled developers to extend your team with speed and precision.",
+      "Skilled IT professionals to strengthen your team.Flexible staffing solutions to meet project demands.Reliable talent support for faster business growth.",
     link: "/services/staff-augmentation",
   },
   {
     src: AI,
+    srcc: ArtificialIntelligence,
     heading: "Artificial Intelligence",
     content:
-      "Powering smarter solutions with AI-driven innovation.",
+      "Intelligent AI solutions to enhance business processes.Machine learning and automation for smarter decision-making.Innovative, scalable, and data-driven AI applications.",
     link: "/services/artificial-intelligence",
   },
   {
     src: DataEngineering,
+    srcc: DataEng,
     heading: "Data Engineering",
     content:
-      "Enabling data-driven systems with scalable engineering excellence.",
+      "Robust data engineering solutions for reliable pipelines.Collect, process, and manage data efficiently at scale.Optimized systems to enable insights and data-driven decisions.",
     link: "/services/data-engineering",
   },
   {
     src: DigitalAnalytics,
+    srcc: DigiAnaltics,
     heading: "Digital Analytics",
     content:
-      "Unlocking business insights with powerful digital analytics.",
+      "Data-driven digital analytics to track performance.Measure, analyze, and optimize business and marketing strategies.Insights and reports to improve growth and decision-making.",
     link: "/services/digital-analytics",
   },
 ];
@@ -279,6 +316,16 @@ const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 800 });
   }, []);
+  const serviceRefs = useRef({});
+  const [activeService, setActiveService] = useState(ourServices.length > 0 ? ourServices[0] : null);
+
+  const handleScrollToService = (heading) => {
+    setActiveService(heading);
+    serviceRefs.current[heading]?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <>
@@ -529,7 +576,10 @@ const Home = () => {
       {/* Our Services */}
       <Box
         component="section"
-        sx={{ px: { xs: 3, sm: 6, lg: 8, xl: 14 }, pt: 12 }}
+        sx={{
+          px: { xs: 2, sm: 4, lg: 8, xl: 14 },
+          pt: 12,
+        }}
       >
         <Box sx={styles.commonBox}>
           <Typography component="h5" sx={styles.heading}>
@@ -548,83 +598,274 @@ const Home = () => {
           />
         </Box>
 
-        <Grid container spacing={{ xs: 6, md: 8 }}>
-          {ourServices.map((item) => (
+        <Box
+          sx={{
+            backgroundColor: "#EEF9FF",
+            borderRadius: "24px",
+            pt: { xs: 2.5, md: 4 },
+            // pt: { xs: 4, md: 5 },
+            pb: { xs: 2, md: 2 },
+          }}
+        >
+          {isMobile ? (
+            /* ================= MOBILE VIEW ================= */
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2, px: 1.2, overflow: "visible", }}>
+              {ourServices.map((service) => (
+                <Accordion
+                  key={service.heading}
+                  disableGutters
+                  elevation={0}
+                  sx={{
+                    //  backgroundColor: "#F4F8FF",
+                    backgroundColor: "#FFF",
+                    borderRadius: "18px",
+                    overflow: "visible",
+                    // 🔥 THIS LINE FIXES YOUR ISSUE
+                    "&:first-of-type": {
+                      borderTopLeftRadius: "18px",
+                      borderTopRightRadius: "18px",
+                    },
+                    "&:last-of-type": {
+                      borderBottomLeftRadius: "18px",
+                      borderBottomRightRadius: "18px",
+                    },
+                    "&:before": { display: "none" },
+                  }}
+                >
+                  {/* HEADER */}
+                  <AccordionSummary
+                    expandIcon={
+                      <ExpandMoreIcon sx={{ color: "#0B5ED7" }} />
+                    }
+                    sx={{
+                      px: 2.5,
+                      py: 1.5,
+                      "& .MuiAccordionSummary-content": {
+                        alignItems: "center",
+                        gap: 1.5,
+                      },
+                    }}
+                  >
+                    <Avatar
+                      src={service.src}
+                      sx={{
+                        width: 34,
+                        height: 34,
+                        backgroundColor: "#EAF1FF",
+                      }}
+                    />
+                    <Typography
+                      sx={{
+                        fontSize: "15px",
+                        fontWeight: 600,
+                        color: "#06A3DA",
+                      }}
+                    >
+                      {service.heading}
+                    </Typography>
+                  </AccordionSummary>
+
+                  {/* DROPDOWN CONTENT */}
+                  <AccordionDetails sx={{ px: 2.5, pb: 2.5 }}>
+                    <Typography
+                      sx={{
+                        fontSize: "14px",
+                        lineHeight: "24px",
+                        color: theme.palette.custom.paragraph,
+                        mb: 2,
+                      }}
+                    >
+                      {service.content}
+                    </Typography>
+
+                    {/* Button */}
+                    <Box
+                      onClick={() => navigate(service.link)}
+                      sx={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 1,
+                        px: 3,
+                        py: 1.1,
+                        borderRadius: "10px",
+                        backgroundColor: "#06A3DA",
+                        color: "#fff",
+                        fontSize: "14px",
+                        fontWeight: 500,
+                        cursor: "pointer",
+                        width: "fit-content",
+                        mb: 2,
+                      }}
+                    >
+                      Learn More <EastIcon sx={{ fontSize: 18 }} />
+                    </Box>
+
+
+                  </AccordionDetails>
+                </Accordion>
+              ))}
+            </Box>
+          ) : (
+            /* ================= DESKTOP VIEW (UNCHANGED) ================= */
             <Grid
-              size={{ xs: 12, sm: 6, lg: 4 }}
-              key={item.heading}
-              data-aos="fade-up"
+              container
+              spacing={4}
+              alignItems="stretch"
+              sx={{
+                height: "334px",            // 🔒 FIXED HEIGHT (IMPORTANT)
+              }}
+              display="flex"
+              flexWrap="nowrap"
             >
-              <Box
-                sx={{
-                  height: 300,
-                  px: 4,
-                  position: "relative",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 1.5,
-                  backgroundColor: "#EEF9FF",
-                  borderRadius: 1,
-                  "&:hover .hoverBox": {
-                    bottom: -24,
-                    opacity: 1,
-                  },
-                }}
-              >
+              {/* LEFT – Vertical Services List */}
+              <Grid item xs={12} md={4} >
                 <Box
-                  component="img"
-                  src={item.src}
-                  alt={item.heading}
                   sx={{
-                    width: 100,
-                    height: 100,
-                    objectFit: "contain",
-                    mb: 0.5,
-                  }}
-                />
-
-                <Typography
-                  component="h4"
-                  sx={{
-                    color: theme.palette.text.secondary,
-                    fontSize: { xs: "22px", md: "23px", lg: "24px" },
-                    fontWeight: 500,
-                    fontFamily: theme.typography.fontFamily,
-                    textAlign: "center",
+                    backgroundColor: "#EFF9FF",
+                    borderRadius: "16px",
+                    p: 2,
+                    height: "90%",
+                    overflowY: "auto",
+                    scrollbarWidth: "none",
+                    "&::-webkit-scrollbar": { display: "none" },
                   }}
                 >
-                  {item.heading}
-                </Typography>
+                  {ourServices.map((service) => {
+                    const isActive =
+                      activeService?.heading === service.heading;
 
-                <Typography
-                  sx={{
-                    color: theme.palette.custom.paragraph,
-                    fontSize: 16,
-                    fontWeight: 400,
-                    textAlign: "center",
-                    fontFamily: theme.typography.fontFamilySecondary,
-                  }}
-                >
-                  {item.content}
-                </Typography>
-
-                <Box
-                  className="hoverBox"
-                  onClick={() => navigate(item.link)}
-                  sx={{
-                    ...styles.hoverBoxStyle,
-                    bottom: -50,
-                  }}
-                >
-                  <EastIcon />
+                    return (
+                      <Box
+                        key={service.heading}
+                        onClick={() => setActiveService(service)}
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1.5,
+                          p: 2,
+                          mb: 1,
+                          cursor: "pointer",
+                          borderRadius: "12px",
+                          fontSize: "14px",
+                          fontWeight: 500,
+                          backgroundColor: isActive ? "#fff" : "transparent",
+                          color: isActive ? "#0B5ED7" : theme.palette.text.primary,
+                          transition: "all 0.2s ease",
+                          "&:hover": { backgroundColor: "#fff" },
+                        }}
+                      >
+                        <Avatar
+                          src={service.src}
+                          sx={{
+                            width: 32,
+                            height: 32,
+                            backgroundColor: "#EAF1FF",
+                          }}
+                        />
+                        {service.heading}
+                      </Box>
+                    );
+                  })}
                 </Box>
-              </Box>
+              </Grid>
+
+              {/* CENTER – Content */}
+              <Grid item xs={12} md={4} lg={4}>
+                {activeService && (
+                  <Box
+                    sx={{
+                      minheight: "240px",
+                      maxWidth: { md: "520px", lg: "600px" },
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "Flex-Start",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 600,
+                        mb: 1,
+                        color: "#000",
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {activeService.heading}
+                    </Typography>
+
+                    <Typography
+                      sx={{
+                        fontSize: 16,
+                        lineHeight: "24px",
+                        mb: 2,
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        color: "#6A6B75",
+                      }}
+                    >
+                      {activeService.content}
+                    </Typography>
+
+                    <Box
+                      onClick={() => navigate(activeService.link)}
+                      sx={{
+                        backgroundColor: "#06A3DA",
+                        color: "#fff",
+                        px: 3,
+                        py: 1,
+                        borderRadius: "10px",
+                        width: "fit-content",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Learn More
+                    </Box>
+                  </Box>
+                )}
+              </Grid>
+
+
+              {/* RIGHT – Image */}
+              <Grid item xs={12} md={4}>
+                <Box
+                  sx={{
+                    width: "90%",
+                    height: "240px", // FIXED HEIGHT (important)
+                    borderRadius: "10px",
+                    p: 0, // remove padding so image fills fully
+                    overflow: "hidden", // crop overflow
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "#fff",
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={activeService?.srcc}
+                    alt="Service"
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover", // FULL COVER
+                      borderRadius: "10px",
+                    }}
+                  />
+                </Box>
+              </Grid>
             </Grid>
-          ))}
-        </Grid>
+
+          )}
+        </Box>
       </Box>
+
+
 
       {/* Industries */}
       <IndustriesSection />
@@ -770,3 +1011,4 @@ const Home = () => {
 };
 
 export default Home;
+

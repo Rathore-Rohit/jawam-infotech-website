@@ -19,24 +19,32 @@ import Underline from "../components/ui/Underline";
 import theme from "../theme";
 
 const textFieldStyle = {
-  "& .MuiFilledInput-root": {
-    backgroundColor: "#EEF9FF",
-    "&:hover": {
-      backgroundColor: "#EEF9FF",
+  "& .MuiOutlinedInput-root": {
+    backgroundColor: "#fff",
+    borderRadius: "8px",
+
+    "& fieldset": {
+      borderColor: "#E0E0E0", // normal border
     },
-    "&.Mui-focused": {
-      backgroundColor: "#EEF9FF",
+
+    "&:hover fieldset": {
+      borderColor: theme.palette.text.primary, // hover blue
+    },
+
+    "&.Mui-focused fieldset": {
+      borderColor: theme.palette.text.primary, // focus blue
+      borderWidth: "1px",
     },
   },
-  "& .MuiFormLabel-root": {
-    color: "#6B6A75",
+
+  "& .MuiInputLabel-root": {
+    color: theme.palette.custom.paragraph,
   },
-  "& .MuiFormLabel-root.Mui-focused": {
-    color: "#83d1ed",
+
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: theme.palette.text.primary, // floating label blue
   },
-  "& .MuiFilledInput-underline:after": {
-    borderBottomColor: "#83d1ed",
-  },
+
   width: { xs: "100%", sm: "50%" },
 };
 
@@ -55,6 +63,7 @@ const ContactUs = () => {
     lastName: "",
     email: "",
     contactNumber: "",
+    message: "",
   });
   const [open, setOpen] = useState(false);
 
@@ -79,6 +88,7 @@ const ContactUs = () => {
     formBody.append("email", formData.email);
     formBody.append("contactNumber", formData.contactNumber);
     formBody.append("heardFrom", source);
+    formBody.append("message", formData.message);
     formBody.append("_captcha", "false");
 
     try {
@@ -95,6 +105,7 @@ const ContactUs = () => {
         lastName: "",
         email: "",
         contactNumber: "",
+        message: "",
       });
       setSource("");
     } catch (error) {
@@ -113,39 +124,61 @@ const ContactUs = () => {
       />
 
       {/* Let's Start a Conversation Section */}
-      <Box component="section" sx={{ px: { xs: 3, sm: 6, lg: 12 }, pt: 12 }}>
+      <Box component="section" sx={{ px: { xs: 1, sm: 5, md: 4, lg: 6 }, pt: { xs: 8, sm: 12 }, mb: { xs: 8, sm: 12 } }}>
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+            borderRadius: "16px",
+            overflow: "hidden",
+            boxShadow: "0 15px 45px rgba(0,0,0,0.08)",
           }}
         >
-          <Typography
+          {/* Form */}
+          <Box
             sx={{
-              fontFamily: theme.typography.fontFamily,
-              fontSize: "22px",
-              color: theme.palette.text.secondary,
+              p: { xs: 2, sm: 4, lg: 4 },
             }}
           >
-            Let's Start a Conversation!
-          </Typography>
-          <Underline
-            lineWidth="140px"
-            lineHeight="3px"
-            barWidth="5px"
-            mtop={1}
-            mBottom={{ xs: 6, sm: 8 }}
-          />
-        </Box>
-        <Grid container spacing={6}>
-          {/* Form */}
-          <Grid size={{ xs: 12, md: 6 }}>
+            <Typography
+              sx={{
+                fontSize: "32px",
+                fontWeight: 600,
+                mb: 1,
+                color: theme.palette.text.primary,
+              }}
+            >
+              Let's Connect
+            </Typography>
+
+            <Typography
+              sx={{
+                color: "#777",
+                mb: 3,
+              }}
+            >
+              We're here to answer your questions and explore new opportunities.
+            </Typography>
             <Box
               component="form"
               onSubmit={handleSubmit}
-              sx={{ mt: { md: 4, lg: 2.5 } }}
+              sx={{
+                mt: 2,
+                p: { xs: 2, sm: 3 },
+                borderRadius: "12px",
+                boxShadow: "0 15px 45px rgba(0,0,0,0.08)",
+              }}
             >
+              <Typography
+                sx={{
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  mb: 4,
+                  color: theme.palette.text.primary,
+                }}
+              >
+                Send Us a Message
+              </Typography>
               <Stack
                 direction={{ xs: "column", sm: "row" }}
                 spacing={2}
@@ -155,7 +188,7 @@ const ContactUs = () => {
                   type="text"
                   name="firstName"
                   label="First Name"
-                  variant="filled"
+                  variant="outlined"
                   sx={{
                     ...textFieldStyle,
                     "& .MuiFormLabel-asterisk": {
@@ -170,7 +203,7 @@ const ContactUs = () => {
                   type="text"
                   name="lastName"
                   label="Last Name"
-                  variant="filled"
+                  variant="outlined"
                   sx={{
                     ...textFieldStyle,
                     "& .MuiFormLabel-asterisk": {
@@ -191,7 +224,7 @@ const ContactUs = () => {
                   type="email"
                   name="email"
                   label="Bussiness Email"
-                  variant="filled"
+                  variant="outlined"
                   sx={{
                     ...textFieldStyle,
                     "& .MuiFormLabel-asterisk": {
@@ -206,7 +239,7 @@ const ContactUs = () => {
                   type="tel"
                   name="contactNumber"
                   label="Contact Number"
-                  variant="filled"
+                  variant="outlined"
                   sx={{
                     ...textFieldStyle,
                     "& .MuiFormLabel-asterisk": {
@@ -230,27 +263,34 @@ const ContactUs = () => {
                   <TextField
                     {...params}
                     label="How did you hear about us"
-                    variant="filled"
+                    variant="outlined"
                     fullWidth
                     required
                     sx={{
-                      "& .MuiFilledInput-root": {
-                        backgroundColor: "#EEF9FF",
-                        "&:hover": {
-                          backgroundColor: "#EEF9FF",
+                      "& .MuiOutlinedInput-root": {
+                        backgroundColor: "#fff",
+                        borderRadius: "8px",
+
+                        "& fieldset": {
+                          borderColor: "#E0E0E0",
                         },
-                        "&.Mui-focused": {
-                          backgroundColor: "#EEF9FF",
+
+                        "&:hover fieldset": {
+                          borderColor: theme.palette.text.primary,
+                        },
+
+                        "&.Mui-focused fieldset": {
+                          borderColor: theme.palette.text.primary,
+                          borderWidth: "1px",
                         },
                       },
-                      "& .MuiFormLabel-root": {
-                        color: "#6B6A75",
+
+                      "& .MuiInputLabel-root": {
+                        color: theme.palette.custom.paragraph,
                       },
-                      "& .MuiFormLabel-root.Mui-focused": {
-                        color: "#83d1ed",
-                      },
-                      "& .MuiFilledInput-underline:after": {
-                        borderBottomColor: "#83d1ed",
+
+                      "& .MuiInputLabel-root.Mui-focused": {
+                        color: theme.palette.text.primary,
                       },
 
                       "& .MuiFormLabel-asterisk": {
@@ -261,6 +301,24 @@ const ContactUs = () => {
                 )}
                 sx={{ mb: 2 }}
               />
+              <TextField
+                name="message"
+                label="Additional Message (Optional)"
+                variant="outlined"
+                multiline
+                rows={3}
+                fullWidth
+                value={formData.message}
+                onChange={handleChange}
+                sx={{
+                  ...textFieldStyle,
+                  width: "100%",
+                  mb: 2,
+                  "& .MuiFormLabel-asterisk": {
+                    display: "none",
+                  },
+                }}
+              />
               <Button
                 fullWidth
                 type="submit"
@@ -268,7 +326,7 @@ const ContactUs = () => {
                   backgroundColor: theme.palette.text.primary,
                   color: theme.palette.custom.white,
                   p: 2,
-                  borderRadius: "2px",
+                  borderRadius: "8px",
                   fontSize: "15px"
                 }}
               >
@@ -292,21 +350,27 @@ const ContactUs = () => {
                 Thank you! Your response has been recorded.
               </Alert>
             </Snackbar>
-          </Grid>
+          </Box>
 
           {/* Company Contact Details Section */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Box
+            sx={{
+              p: { xs: 2, sm: 4, lg: 4 },
+              borderLeft: { md: "1px solid #eee" },
+              background: "#fff",
+            }}
+          >
             <Box component="div">
               <Box
-                sx={{ display: "flex", alignItems: "center", gap: 3, mb: 2 }}
+                sx={{ display: "flex", alignItems: "center", gap: 3, mb: 4 }}
               >
                 <LocationOnIcon
-                  sx={{ color: theme.palette.text.primary, fontSize: 46 }}
+                  sx={{ color: theme.palette.text.primary, fontSize: 36 }}
                 />
                 <Stack direction="column">
                   <Typography
                     sx={{
-                      fontSize: "20px",
+                      fontSize: "18px",
                       fontFamily: theme.typography.fontFamily,
                       fontWeight: 400,
                       color: theme.palette.text.secondary,
@@ -318,7 +382,7 @@ const ContactUs = () => {
                   <Typography
                     sx={{
                       color: theme.palette.text.primary,
-                      fontSize: "20px",
+                      fontSize: "17px",
                       fontWeight: 400,
                       fontFamily: theme.typography.fontFamily,
                       lineHeight: 1.2,
@@ -331,15 +395,15 @@ const ContactUs = () => {
                 </Stack>
               </Box>
               <Box
-                sx={{ display: "flex", alignItems: "center", gap: 3, mb: 2 }}
+                sx={{ display: "flex", alignItems: "center", gap: 3, mb: 4 }}
               >
                 <PhoneEnabledIcon
-                  sx={{ color: theme.palette.text.primary, fontSize: 46 }}
+                  sx={{ color: theme.palette.text.primary, fontSize: 36 }}
                 />
                 <Stack direction="column">
                   <Typography
                     sx={{
-                      fontSize: "20px",
+                      fontSize: "18px",
                       fontFamily: theme.typography.fontFamily,
                       fontWeight: 400,
                       color: theme.palette.text.secondary,
@@ -351,7 +415,7 @@ const ContactUs = () => {
                   <Typography
                     component="div"
                     sx={{
-                      fontSize: "20px",
+                      fontSize: "17px",
                       fontFamily: theme.typography.fontFamily,
                       fontWeight: 400,
                       color: theme.palette.text.secondary,
@@ -375,7 +439,7 @@ const ContactUs = () => {
                   <Typography
                     component="div"
                     sx={{
-                      fontSize: "20px",
+                      fontSize: "17px",
                       fontFamily: theme.typography.fontFamily,
                       fontWeight: 400,
                       color: theme.palette.text.secondary,
@@ -401,15 +465,15 @@ const ContactUs = () => {
                 </Stack>
               </Box>
               <Box
-                sx={{ display: "flex", alignItems: "center", gap: 3, mb: 2 }}
+                sx={{ display: "flex", alignItems: "center", gap: 3, mb: 4 }}
               >
                 <VoicemailIcon
-                  sx={{ color: theme.palette.text.primary, fontSize: 46 }}
+                  sx={{ color: theme.palette.text.primary, fontSize: 36 }}
                 />
                 <Stack>
                   <Typography
                     sx={{
-                      fontSize: "20px",
+                      fontSize: "18px",
                       fontFamily: theme.typography.fontFamily,
                       fontWeight: 400,
                       color: theme.palette.text.secondary,
@@ -420,7 +484,7 @@ const ContactUs = () => {
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: "20px",
+                      fontSize: "17px",
                       fontFamily: theme.typography.fontFamily,
                       fontWeight: 400,
                       color: theme.palette.text.primary,
@@ -432,33 +496,30 @@ const ContactUs = () => {
                   </Typography>
                 </Stack>
               </Box>
+              {/* Map here */}
+              <Box
+                sx={{
+                  width: "100%",
+                  height: 220,
+                  mt: 6,
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+                }}
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.3258706020683!2d75.89112127513222!3d22.75328477936358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3963031386a3f963%3A0xe9e34dddfa31ab0d!2sJawam%20Infotech!5e0!3m2!1sen!2sin!4v1729927357948!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                />
+              </Box>
             </Box>
-          </Grid>
-        </Grid>
-      </Box>
-
-      {/* Map */}
-      <Box
-        sx={{
-          width: "100%",
-          height: { xs: 350, sm: 300, md: 350 },
-          px: { xs: 3, sm: 6, lg: 13 },
-          mt: { xs: 5, md: 12 },
-          mb: 12,
-        }}
-      >
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.3258706020683!2d75.89112127513222!3d22.75328477936358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3963031386a3f963%3A0xe9e34dddfa31ab0d!2sJawam%20Infotech!5e0!3m2!1sen!2sin!4v1729927357948!5m2!1sen!2sin"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+          </Box>
+        </Box>
       </Box>
     </>
   );
 };
-
 export default ContactUs;
